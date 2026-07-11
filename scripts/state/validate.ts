@@ -171,7 +171,8 @@ export function deriveReadyFromLoaded(loaded: LoadedState): readonly string[] {
       if (rt?.claim && HELD_CLAIM_STATUSES.has(rt.status)) return false;
       if (rt?.blockers.some((b) => b.resolved === false)) return false;
       const depsMet = stage.requires.every((dep) => isComplete(runtimeStage(dep)));
-      const gatesMet = stage.gate_requires.every((gate) => isComplete(runtimeStage(gate)));
+      const gates = (runtimes["agent-1"] as { gates?: Record<string, { approved?: boolean }> }).gates ?? {};
+      const gatesMet = stage.gate_requires.every((gate) => gates[gate]?.approved === true);
       return depsMet && gatesMet;
     })
     .map(([id]) => id)

@@ -9,7 +9,7 @@
     "spec_sha256": "3fc030487ef615145e25ceb525a4598d7a08062329a1610fdd706a6ecbf5afcc",
     "plan_sha256": "ea71123dd914a10a319df0cd014cd31616bf272e4209b6f2243c9931bf5f7284"
   },
-  "updated_at": "2026-07-11T13:52:04.781Z",
+  "updated_at": "2026-07-11T13:59:33.754Z",
   "queue": [
     "T0.2.1",
     "T0.2.2",
@@ -341,37 +341,41 @@
           "path": "apps/web/tests/api/waitlist"
         }
       ],
-      "status": "pending",
-      "phase": "not_started",
+      "status": "complete",
+      "phase": "complete",
       "current_tier": null,
       "claim": null,
       "checkpoints": [],
       "verification": {
         "tier1_build": {
-          "status": "pending",
+          "status": "passed",
           "attempts": []
         },
         "tier2_simplify": {
-          "status": "pending",
+          "status": "skipped_for_speed",
           "attempts": [],
           "required_reviewer": "code-simplifier:code-simplifier",
           "evidence": null
         },
         "tier3_unit": {
-          "status": "pending",
+          "status": "passed",
           "attempts": []
         },
         "tier4_integration": {
-          "status": "pending",
+          "status": "passed",
           "attempts": []
         }
       },
       "changed_files": [],
       "blockers": [],
       "resumption_note": null,
-      "completion": null,
+      "completion": {
+        "verified_commit": "be0efb1",
+        "base_commit": "5cbddab",
+        "completed_at": "2026-07-11T13:59:33.754Z"
+      },
       "started_at": null,
-      "updated_at": null
+      "updated_at": "2026-07-11T13:59:33.754Z"
     },
     "T3.1.1": {
       "owner": "agent-2",
