@@ -1,0 +1,150 @@
+{
+  "schema_version": "2.0",
+  "last_updated": "2026-07-11T00:00:00.000Z",
+  "current_task": "T1",
+  "current_step": "T1.1",
+  "current_stage": "T1.1.1",
+  "tasks": {
+    "T1": {
+      "status": "pending",
+      "steps": {
+        "T1.1": {
+          "status": "pending",
+          "stages": {
+            "T1.1.1": { "status": "pending", "completed_at": null },
+            "T1.1.2": { "status": "pending", "completed_at": null }
+          }
+        },
+        "T1.2": {
+          "status": "pending",
+          "stages": {
+            "T1.2.1": { "status": "pending", "completed_at": null }
+          }
+        },
+        "T1.3": {
+          "status": "pending",
+          "stages": {
+            "T1.3.1": { "status": "pending", "completed_at": null }
+          }
+        }
+      }
+    },
+    "T2": {
+      "status": "pending",
+      "steps": {
+        "T2.1": {
+          "status": "pending",
+          "stages": {
+            "T2.1.1": { "status": "pending", "completed_at": null },
+            "T2.1.2": { "status": "pending", "completed_at": null }
+          }
+        },
+        "T2.2": {
+          "status": "pending",
+          "stages": {
+            "T2.2.1": { "status": "pending", "completed_at": null },
+            "T2.2.2": { "status": "pending", "completed_at": null }
+          }
+        },
+        "T2.3": {
+          "status": "pending",
+          "stages": {
+            "T2.3.1": { "status": "pending", "completed_at": null },
+            "T2.3.2": { "status": "pending", "completed_at": null }
+          }
+        }
+      }
+    },
+    "T3": {
+      "status": "pending",
+      "steps": {
+        "T3.1": {
+          "status": "pending",
+          "stages": {
+            "T3.1.1": { "status": "pending", "completed_at": null },
+            "T3.1.2": { "status": "pending", "completed_at": null }
+          }
+        },
+        "T3.2": {
+          "status": "pending",
+          "stages": {
+            "T3.2.1": { "status": "pending", "completed_at": null },
+            "T3.2.2": { "status": "pending", "completed_at": null }
+          }
+        }
+      }
+    },
+    "T4": {
+      "status": "pending",
+      "steps": {
+        "T4.1": {
+          "status": "pending",
+          "stages": {
+            "T4.1.1": { "status": "pending", "completed_at": null }
+          }
+        },
+        "T4.2": {
+          "status": "pending",
+          "stages": {
+            "T4.2.1": { "status": "pending", "completed_at": null }
+          }
+        },
+        "T4.3": {
+          "status": "pending",
+          "stages": {
+            "T4.3.1": { "status": "pending", "completed_at": null }
+          }
+        }
+      }
+    },
+    "T5": {
+      "status": "pending",
+      "steps": {
+        "T5.1": {
+          "status": "pending",
+          "stages": {
+            "T5.1.1": { "status": "pending", "completed_at": null }
+          }
+        },
+        "T5.2": {
+          "status": "pending",
+          "stages": {
+            "T5.2.1": { "status": "pending", "completed_at": null }
+          }
+        }
+      }
+    },
+    "T6": {
+      "status": "pending",
+      "steps": {
+        "T6.1": {
+          "status": "pending",
+          "stages": {
+            "T6.1.1": { "status": "pending", "completed_at": null },
+            "T6.1.2": { "status": "pending", "completed_at": null }
+          }
+        },
+        "T6.2": {
+          "status": "pending",
+          "stages": {
+            "T6.2.1": { "status": "pending", "completed_at": null },
+            "T6.2.2": { "status": "pending", "completed_at": null }
+          }
+        }
+      }
+    },
+    "T7": {
+      "status": "pending",
+      "steps": {
+        "T7.1": {
+          "status": "pending",
+          "stages": {
+            "T7.1.1": { "status": "pending", "completed_at": null },
+            "T7.1.2": { "status": "pending", "completed_at": null }
+          }
+        }
+      }
+    }
+  },
+  "postmortems": []
+}
