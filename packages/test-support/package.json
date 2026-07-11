@@ -13,6 +13,14 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "test": "vitest run"
+    "test": "vitest run tests/fakes.test.ts",
+    "test:rules": "vitest run tests/rules"
+  },
+  "dependencies": {
+    "@jj/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@firebase/rules-unit-testing": "3.0.4",
+    "firebase": "10.14.1"
   }
 }
