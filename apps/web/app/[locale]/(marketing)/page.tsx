@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 
+import { TrackEvent } from "@/components/analytics/track-event";
 import { CtaSection } from "@/components/marketing/cta-section";
 import { Hero } from "@/components/marketing/hero";
 import { HowItWorks } from "@/components/marketing/how-it-works";
@@ -19,6 +20,7 @@ export default async function MarketingHome({ params }: { params: Promise<{ loca
 
   return (
     <>
+      <TrackEvent event="marketing_view" props={{ locale }} />
       <SiteHeader locale={locale} nav={t.nav} />
       <main>
         <Hero locale={locale} hero={t.hero} />

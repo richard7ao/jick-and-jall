@@ -3,6 +3,7 @@
 import { useId, useState, type FormEvent } from "react";
 
 import { Button } from "@/components/ui/button";
+import { track } from "@/src/analytics/track";
 import type { Dictionary } from "@/lib/dictionary";
 import type { Locale } from "@/lib/i18n";
 import {
@@ -58,7 +59,12 @@ export function WaitlistForm({
           handle: handle.trim() || undefined,
         }),
       });
-      setStatus(response.ok ? "success" : "error");
+      if (response.ok) {
+        track("waitlist_submitted", { locale, role });
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
     } catch {
       setStatus("error");
     }

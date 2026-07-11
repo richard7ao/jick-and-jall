@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 
+import { TrackEvent } from "@/components/analytics/track-event";
 import { SiteFooter } from "@/components/marketing/site-footer";
 import { SiteHeader } from "@/components/marketing/site-header";
 import { Container } from "@/components/ui/container";
@@ -26,6 +27,10 @@ export default async function WaitlistPage({
 
   return (
     <>
+      <TrackEvent
+        event="waitlist_view"
+        props={initialRole ? { locale, role: initialRole } : { locale }}
+      />
       <SiteHeader locale={locale} nav={t.nav} />
       <main>
         <Container className="flex max-w-xl flex-col gap-8 py-16">
