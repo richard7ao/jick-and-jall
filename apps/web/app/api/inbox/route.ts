@@ -1,7 +1,15 @@
+import { randomUUID } from "node:crypto";
 import type { Principal } from "@jj/auth";
-import { isThreadParticipant, type Thread } from "@jj/db";
+import {
+  isThreadParticipant,
+  matchesRepository,
+  messagesRepository,
+  threadsRepository,
+  type Thread,
+} from "@jj/db";
 import { SCHEMA_VERSION, type Match, type Message } from "@jj/shared";
 import type { NextRequest } from "next/server";
+import { getServerPrincipal } from "../../../lib/server-auth";
 
 /**
  * Authorized inbox. A thread can be opened only from a consented match, and
@@ -91,6 +99,31 @@ export async function handleSendMessage(request: Request, deps: InboxDeps): Prom
   return json(201, { id: message.id });
 }
 
-export async function POST(_request: NextRequest): Promise<Response> {
-  return json(501, { error: "not_implemented" });
+function wire(principal: Principal | null): InboxDeps {
+  const matches = matchesRepository();
+  const threads = threadsRepository();
+  const messages = messagesRepository();
+  return {
+    getPrincipal: () => principal,
+    getMatch: (id) => matches.get(id),
+    upsertThread: (thread) => threads.upsert(thread),
+    getThread: (id) => threads.get(id),
+    listThreads: (uid) => threads.listForUser(uid),
+    appendMessage: (message) => messages.append(message),
+    now: () => new Date().toISOString(),
+    threadId: (matchId) => `thread_${matchId}`,
+    messageId: () => randomUUID(),
+  };
+}
+
+export async function GET(request: NextRequest): Promise<Response> {
+  return handleListThreads(request, wire(await getServerPrincipal(request)));
+}
+
+export async function POST(request: NextRequest): Promise<Response> {
+  return handleOpenThread(request, wire(await getServerPrincipal(request)));
+}
+
+export async function PUT(request: NextRequest): Promise<Response> {
+  return handleSendMessage(request, wire(await getServerPrincipal(request)));
 }

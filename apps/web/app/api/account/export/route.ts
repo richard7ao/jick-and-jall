@@ -1,6 +1,8 @@
 import type { Principal } from "@jj/auth";
+import { creatorProfilesRepository, voiceSessionsRepository } from "@jj/db";
 import type { CreatorProfile, VoiceSession } from "@jj/shared";
 import type { NextRequest } from "next/server";
+import { getServerPrincipal } from "../../../../lib/server-auth";
 
 /**
  * GDPR-style data export: returns the requester's own profile plus voice-session
@@ -41,6 +43,13 @@ export async function handleExport(request: Request, deps: ExportDeps): Promise<
   });
 }
 
-export async function GET(_request: NextRequest): Promise<Response> {
-  return json(501, { error: "not_implemented" });
+export async function GET(request: NextRequest): Promise<Response> {
+  const principal = await getServerPrincipal(request);
+  const profiles = creatorProfilesRepository();
+  const sessions = voiceSessionsRepository();
+  return handleExport(request, {
+    getPrincipal: () => principal,
+    getProfile: (uid) => profiles.get(uid),
+    listSessions: (uid) => sessions.listByUid(uid),
+  });
 }

@@ -1,5 +1,8 @@
 import { decideMediaAccess, ownerFromRecordingPath, type Principal } from "@jj/auth";
+import { getApps, initializeApp } from "firebase-admin/app";
+import { getStorage } from "firebase-admin/storage";
 import type { NextRequest } from "next/server";
+import { getServerPrincipal } from "../../../lib/server-auth";
 
 /**
  * Private media broker. Returns a short-lived signed URL to the owner (or an
@@ -39,8 +42,23 @@ export async function handleMediaRequest(request: Request, deps: MediaDeps): Pro
   });
 }
 
-export async function GET(_request: NextRequest): Promise<Response> {
-  // Wired to Firebase Storage signed URLs when the storage client lands; the
-  // handler is unit-tested via dependency injection.
-  return notFound();
+function storageBucket() {
+  const app = getApps()[0] ?? initializeApp({ projectId: process.env.FIREBASE_PROJECT_ID ?? "demo-jj" });
+  return getStorage(app).bucket(process.env.FIREBASE_STORAGE_BUCKET ?? "demo-jj.appspot.com");
+}
+
+export async function GET(request: NextRequest): Promise<Response> {
+  const principal = await getServerPrincipal(request);
+  const admins = new Set((process.env.ADMIN_UIDS ?? "").split(",").filter(Boolean));
+  return handleMediaRequest(request, {
+    getPrincipal: () => principal,
+    admins,
+    exists: async (path) => (await storageBucket().file(path).exists())[0],
+    signUrl: async (path) => {
+      const [url] = await storageBucket()
+        .file(path)
+        .getSignedUrl({ action: "read", expires: Date.now() + 5 * 60_000 });
+      return url;
+    },
+  });
 }

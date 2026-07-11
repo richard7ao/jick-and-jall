@@ -1,3 +1,4 @@
+import { dealsRepository, transactionsRepository } from "@jj/db";
 import { parseStripeEvent, verifyStripeSignature, type StripeEvent } from "@jj/payments";
 import type { NextRequest } from "next/server";
 
@@ -36,9 +37,25 @@ export async function handleStripeWebhook(request: Request, deps: WebhookDeps): 
 
 export async function POST(request: NextRequest): Promise<Response> {
   const secret = process.env.STRIPE_WEBHOOK_SECRET ?? "";
+  const transactions = transactionsRepository();
+  const deals = dealsRepository();
   return handleStripeWebhook(request, {
     verify: (payload, signature) => Boolean(secret) && verifyStripeSignature(payload, signature, secret),
-    recordCharge: async () => false, // wired to the transactions repo in deployment
-    fundDeal: async () => {},
+    recordCharge: async (event) => {
+      const object = event.data.object as { amount_total?: number; metadata?: { dealId?: string } };
+      const dealId = object.metadata?.dealId ?? "unknown";
+      // Deterministic id per stripe event → idempotent on redelivery.
+      return transactions.record({
+        id: `stripe_${event.id}`,
+        dealId,
+        kind: "charge",
+        amountMinor: object.amount_total ?? 0,
+        at: new Date().toISOString(),
+        stripeEventId: event.id,
+      });
+    },
+    fundDeal: async (dealId) => {
+      await deals.transition(dealId, "funded", new Date().toISOString());
+    },
   });
 }

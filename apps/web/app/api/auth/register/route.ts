@@ -1,7 +1,10 @@
-import { normalizeEmail } from "@jj/db";
+import { invitationsRepository, normalizeEmail, usersRepository } from "@jj/db";
 import { serializeSessionCookie } from "@jj/auth";
 import { SCHEMA_VERSION, type Invitation, type Locale, type UserRecord } from "@jj/shared";
+import { getApps, initializeApp } from "firebase-admin/app";
+import { getAuth } from "firebase-admin/auth";
 import type { NextRequest } from "next/server";
+import { csrfOk } from "../../../../lib/server-auth";
 
 /**
  * Invitation-gated registration. The server verifies the Firebase ID token,
@@ -74,9 +77,33 @@ export async function handleRegister(request: Request, deps: RegisterDeps): Prom
   );
 }
 
-export async function POST(_request: NextRequest): Promise<Response> {
-  // Real wiring (firebase-admin auth verification + session cookie minting) is
-  // added when the client auth UI lands; the handler above is fully unit-tested
-  // through dependency injection.
-  return json(501, { error: "not_implemented" });
+function adminAuth() {
+  const app = getApps()[0] ?? initializeApp({ projectId: process.env.FIREBASE_PROJECT_ID ?? "demo-jj" });
+  return getAuth(app);
+}
+
+const SESSION_MAX_AGE_SECONDS = 60 * 60 * 24 * 5; // 5 days
+
+export async function POST(request: NextRequest): Promise<Response> {
+  const invitations = invitationsRepository();
+  const users = usersRepository();
+  return handleRegister(request, {
+    verifyCsrf: csrfOk,
+    verifyIdToken: async (idToken) => {
+      const decoded = await adminAuth().verifyIdToken(idToken);
+      return { uid: decoded.uid, email: decoded.email ?? "" };
+    },
+    getInvitation: (id) => invitations.get(id),
+    createUser: (user) => users.create(user),
+    consumeInvitation: (id, at) => invitations.consume(id, at),
+    createSessionCookie: async (idToken) => {
+      const value = await adminAuth().createSessionCookie(idToken, { expiresIn: SESSION_MAX_AGE_SECONDS * 1000 });
+      return {
+        value,
+        maxAgeSeconds: SESSION_MAX_AGE_SECONDS,
+        expiresAt: new Date(Date.now() + SESSION_MAX_AGE_SECONDS * 1000).toISOString(),
+      };
+    },
+    now: () => new Date().toISOString(),
+  });
 }

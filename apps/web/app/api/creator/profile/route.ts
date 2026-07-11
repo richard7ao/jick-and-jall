@@ -1,6 +1,8 @@
 import type { Principal } from "@jj/auth";
+import { creatorProfilesRepository } from "@jj/db";
 import { CreatorProfileSchema, SCHEMA_VERSION, type CreatorProfile } from "@jj/shared";
 import type { NextRequest } from "next/server";
+import { getServerPrincipal } from "../../../../lib/server-auth";
 
 /**
  * Creator profile API. A creator reads and edits only their own profile; the
@@ -53,6 +55,20 @@ export async function handlePutProfile(request: Request, deps: ProfileDeps): Pro
   return json(200, saved);
 }
 
-export async function GET(_request: NextRequest): Promise<Response> {
-  return json(501, { error: "not_implemented" });
+function wire(principal: Principal | null): ProfileDeps {
+  const repo = creatorProfilesRepository();
+  return {
+    getPrincipal: () => principal,
+    get: (uid) => repo.get(uid),
+    upsert: (profile) => repo.upsert(profile),
+    now: () => new Date().toISOString(),
+  };
+}
+
+export async function GET(request: NextRequest): Promise<Response> {
+  return handleGetProfile(request, wire(await getServerPrincipal(request)));
+}
+
+export async function PUT(request: NextRequest): Promise<Response> {
+  return handlePutProfile(request, wire(await getServerPrincipal(request)));
 }

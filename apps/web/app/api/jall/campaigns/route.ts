@@ -1,6 +1,9 @@
+import { randomUUID } from "node:crypto";
 import type { Principal } from "@jj/auth";
+import { campaignsRepository } from "@jj/db";
 import { CampaignSchema, SCHEMA_VERSION, type Campaign } from "@jj/shared";
 import type { NextRequest } from "next/server";
+import { getServerPrincipal } from "../../../../lib/server-auth";
 
 /**
  * Jall campaign API. A brand creates and lists only its own campaigns; the
@@ -57,6 +60,21 @@ export async function handleCreateCampaign(request: Request, deps: CampaignDeps)
   return json(201, await deps.create(parsed.data));
 }
 
-export async function POST(_request: NextRequest): Promise<Response> {
-  return json(501, { error: "not_implemented" });
+function wire(principal: Principal | null): CampaignDeps {
+  const repo = campaignsRepository();
+  return {
+    getPrincipal: () => principal,
+    create: (campaign) => repo.create(campaign),
+    listByBrand: (uid) => repo.listByBrand(uid),
+    now: () => new Date().toISOString(),
+    newId: () => randomUUID(),
+  };
+}
+
+export async function POST(request: NextRequest): Promise<Response> {
+  return handleCreateCampaign(request, wire(await getServerPrincipal(request)));
+}
+
+export async function GET(request: NextRequest): Promise<Response> {
+  return handleListCampaigns(request, wire(await getServerPrincipal(request)));
 }

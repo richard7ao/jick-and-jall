@@ -1,4 +1,5 @@
 import { purgeExpiredSessions, type PurgeDeps } from "@jj/agents";
+import { voiceSessionsRepository } from "@jj/db";
 import type { NextRequest } from "next/server";
 
 /**
@@ -28,8 +29,15 @@ export function cronAuthorized(request: Request): boolean {
   return Boolean(secret) && request.headers.get("authorization") === `Bearer ${secret}`;
 }
 
-export async function POST(_request: NextRequest): Promise<Response> {
-  // Wired to repositories + the ElevenLabs client in deployment; the handler is
-  // exercised through dependency injection and the purge logic is unit-tested.
-  return json(501, { error: "not_implemented" });
+export async function POST(request: NextRequest): Promise<Response> {
+  const sessions = voiceSessionsRepository();
+  return handleRetentionPurge(request, {
+    isAuthorized: cronAuthorized,
+    now: () => new Date().toISOString(),
+    listOlderThan: (cutoff) => sessions.listOlderThan(cutoff),
+    deleteFirestore: (id) => sessions.delete(id),
+    // Storage + upstream deletion are wired to their clients in deployment.
+    deleteStorage: async () => {},
+    deleteUpstream: async () => {},
+  });
 }

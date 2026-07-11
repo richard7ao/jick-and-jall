@@ -20,6 +20,10 @@ export function voiceSessionsRepository(db: Firestore = getDb()) {
     async complete(id: string, transcript: TranscriptTurn[], recordingStored: boolean, updatedAt: string): Promise<void> {
       await col.doc(id).update({ status: "completed", transcript, recordingStored, updatedAt });
     },
+    async listByUid(uid: string): Promise<VoiceSession[]> {
+      const snap = await col.where("uid", "==", uid).get();
+      return snap.docs.map((d) => d.data() as VoiceSession);
+    },
     async listOlderThan(cutoffIso: string): Promise<VoiceSession[]> {
       const snap = await col.where("createdAt", "<", cutoffIso).get();
       return snap.docs.map((d) => d.data() as VoiceSession);
