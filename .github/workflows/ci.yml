@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate coordination state
+        run: pnpm state:validate
+
+      - name: Validate bilingual content
+        run: pnpm content:validate
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Unit tests (scripts)
+        run: pnpm vitest run scripts
+
+      - name: Build (dry plan)
+        run: pnpm turbo run build --dry=json
