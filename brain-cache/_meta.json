@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "endpoint_hash": "local",
+  "last_refresh": {
+    "recent-decisions": 1783765153528,
+    "salience": 1783765153552
+  },
+  "last_attempt": {
+    "product": 1783765153416,
+    "goals": 1783765153466,
+    "recent-decisions": 1783765153527,
+    "salience": 1783765153551
+  }
+}
