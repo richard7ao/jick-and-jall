@@ -1,150 +1,2668 @@
 {
-  "schema_version": "2.0",
-  "last_updated": "2026-07-11T00:00:00.000Z",
-  "current_task": "T1",
-  "current_step": "T1.1",
-  "current_stage": "T1.1.1",
-  "tasks": {
-    "T1": {
-      "status": "pending",
-      "steps": {
-        "T1.1": {
-          "status": "pending",
-          "stages": {
-            "T1.1.1": { "status": "pending", "completed_at": null },
-            "T1.1.2": { "status": "pending", "completed_at": null }
-          }
+  "schema_version": "3.0",
+  "kind": "global_schedule",
+  "project": "jick-and-jall-v1",
+  "schedule_revision": 1,
+  "created_at": "2026-07-11T00:00:00Z",
+  "source": {
+    "design_path": "docs/superpowers/specs/2026-07-11-jick-and-jall-v1-design.md",
+    "design_sha256": "98976fa829f8d318de5b432926ef8bc8f4e048dddd347145086b978351f70383",
+    "spec_path": "docs/superpowers/specs/jick-and-jall-v1.md",
+    "spec_sha256": "3fc030487ef615145e25ceb525a4598d7a08062329a1610fdd706a6ecbf5afcc",
+    "plan_path": "docs/superpowers/plans/2026-07-11-jick-and-jall-v1.md",
+    "plan_sha256": "ea71123dd914a10a319df0cd014cd31616bf272e4209b6f2243c9931bf5f7284"
+  },
+  "agents": [
+    "agent-1",
+    "agent-2"
+  ],
+  "policy": {
+    "lease_seconds": 14400,
+    "clock_skew_seconds": 300,
+    "max_active_claims_per_agent": 1,
+    "ready_is_derived": true,
+    "aggregate_status_is_derived": true,
+    "runtime_evidence": "hashes_and_redacted_summaries_only",
+    "scope_kinds": [
+      "file",
+      "tree"
+    ]
+  },
+  "expected_totals": {
+    "active_stages": 41,
+    "weight_by_agent": {
+      "agent-1": 116,
+      "agent-2": 121
+    }
+  },
+  "tasks": [
+    {
+      "id": "T0",
+      "title": "Prerequisites, secrets, hackathon evidence, and two-computer control",
+      "description": "Bootstrap both machines, validate coordination, verify providers, and preserve sanitized Hermes evidence.",
+      "step_ids": [
+        "T0.1",
+        "T0.2"
+      ]
+    },
+    {
+      "id": "T1",
+      "title": "Supported monorepo, contracts, Firebase, and tests",
+      "description": "Create the supported application foundation and typed data/security boundaries.",
+      "step_ids": [
+        "T1.1",
+        "T1.2",
+        "T1.3"
+      ]
+    },
+    {
+      "id": "T2",
+      "title": "Bilingual marketing, waitlist, invitations, and launch gate",
+      "description": "Ship the public launch surface and stop for explicit user approval.",
+      "step_ids": [
+        "T2.1",
+        "T2.2",
+        "T2.3"
+      ]
+    },
+    {
+      "id": "T3",
+      "title": "Invitation-gated authentication, shells, and media security",
+      "description": "Create separate role accounts, secure sessions, app shells, and private media authorization.",
+      "step_ids": [
+        "T3.1",
+        "T3.2"
+      ]
+    },
+    {
+      "id": "T4",
+      "title": "Jick creator onboarding and private media",
+      "description": "Build bilingual voice/text creator onboarding, editable profiles, recordings, transcripts, deletion, and export.",
+      "step_ids": [
+        "T4.1",
+        "T4.2"
+      ]
+    },
+    {
+      "id": "T5",
+      "title": "Jall brand profile and campaign onboarding",
+      "description": "Build bilingual brand onboarding and editable campaign briefs.",
+      "step_ids": [
+        "T5.1",
+        "T5.2"
+      ]
+    },
+    {
+      "id": "T6",
+      "title": "Superlinked matching, consent, inbox, and chat",
+      "description": "Rank registered creators deterministically, gate disclosure by consent, and open authorized conversations.",
+      "step_ids": [
+        "T6.1",
+        "T6.2"
+      ]
+    },
+    {
+      "id": "T7",
+      "title": "Offers, delivery, Stripe, and intervention",
+      "description": "Complete a versioned offer, test-mode payment, delivery, approval, payout, and manual exception path.",
+      "step_ids": [
+        "T7.1",
+        "T7.2",
+        "T7.3"
+      ]
+    },
+    {
+      "id": "T8",
+      "title": "Development, staging, and production-safe testing guide",
+      "description": "Make every major capability reproducibly testable without unsafe production mutations.",
+      "step_ids": [
+        "T8.1",
+        "T8.2",
+        "T8.3"
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "id": "T0.1",
+      "task_id": "T0",
+      "title": "Delivery controls",
+      "description": "Pin the workspace, validate state, and define bilingual content and asset contracts.",
+      "stage_ids": [
+        "T0.1.1",
+        "T0.1.2"
+      ]
+    },
+    {
+      "id": "T0.2",
+      "task_id": "T0",
+      "title": "Credentials, providers, and Hermes",
+      "description": "Verify redacted provider connectivity on both machines and preserve hackathon evidence.",
+      "stage_ids": [
+        "T0.2.1",
+        "T0.2.2"
+      ]
+    },
+    {
+      "id": "T1.1",
+      "task_id": "T1",
+      "title": "Application workspace",
+      "description": "Create the monorepo and bilingual Next.js foundation.",
+      "stage_ids": [
+        "T1.1.1",
+        "T1.1.2"
+      ]
+    },
+    {
+      "id": "T1.2",
+      "task_id": "T1",
+      "title": "Contracts and Firebase foundation",
+      "description": "Create shared schemas, emulators, rules, fakes, and fixtures.",
+      "stage_ids": [
+        "T1.2.1",
+        "T1.2.2"
+      ]
+    },
+    {
+      "id": "T1.3",
+      "task_id": "T1",
+      "title": "Typed persistence",
+      "description": "Create session helpers and the typed Firestore repository layer.",
+      "stage_ids": [
+        "T1.3.1"
+      ]
+    },
+    {
+      "id": "T2.1",
+      "task_id": "T2",
+      "title": "Public experience",
+      "description": "Create the warm bilingual marketing surface.",
+      "stage_ids": [
+        "T2.1.1"
+      ]
+    },
+    {
+      "id": "T2.2",
+      "task_id": "T2",
+      "title": "Waitlist and invitations",
+      "description": "Capture low-friction entries and approve them manually.",
+      "stage_ids": [
+        "T2.2.1",
+        "T2.2.2"
+      ]
+    },
+    {
+      "id": "T2.3",
+      "task_id": "T2",
+      "title": "Launch acceptance",
+      "description": "Verify and deploy the waitlist candidate before human approval.",
+      "stage_ids": [
+        "T2.3.1"
+      ]
+    },
+    {
+      "id": "T3.1",
+      "task_id": "T3",
+      "title": "Identity",
+      "description": "Consume invitations and create immutable role sessions.",
+      "stage_ids": [
+        "T3.1.1",
+        "T3.1.2"
+      ]
+    },
+    {
+      "id": "T3.2",
+      "task_id": "T3",
+      "title": "Authenticated surface",
+      "description": "Create separate role shells and owner-scoped media access.",
+      "stage_ids": [
+        "T3.2.1",
+        "T3.2.2"
+      ]
+    },
+    {
+      "id": "T4.1",
+      "task_id": "T4",
+      "title": "Voice and orchestration platform",
+      "description": "Create typed provider clients and Jick persistence APIs.",
+      "stage_ids": [
+        "T4.1.1",
+        "T4.1.2"
+      ]
+    },
+    {
+      "id": "T4.2",
+      "task_id": "T4",
+      "title": "Creator experience",
+      "description": "Create voice/text onboarding, profile editing, playback, deletion, and export.",
+      "stage_ids": [
+        "T4.2.1",
+        "T4.2.2"
+      ]
+    },
+    {
+      "id": "T5.1",
+      "task_id": "T5",
+      "title": "Jall platform",
+      "description": "Extract and persist brand profiles and campaign briefs.",
+      "stage_ids": [
+        "T5.1.1",
+        "T5.1.2"
+      ]
+    },
+    {
+      "id": "T5.2",
+      "task_id": "T5",
+      "title": "Brand experience",
+      "description": "Create mobile bilingual intake and review/publish screens.",
+      "stage_ids": [
+        "T5.2.1",
+        "T5.2.2"
+      ]
+    },
+    {
+      "id": "T6.1",
+      "task_id": "T6",
+      "title": "Matching and disclosure",
+      "description": "Combine semantic signals with deterministic ranking and consent.",
+      "stage_ids": [
+        "T6.1.1",
+        "T6.1.2",
+        "T6.1.3"
+      ]
+    },
+    {
+      "id": "T6.2",
+      "task_id": "T6",
+      "title": "Conversations",
+      "description": "Create authorized inbox and real-time chat.",
+      "stage_ids": [
+        "T6.2.1",
+        "T6.2.2"
+      ]
+    },
+    {
+      "id": "T7.1",
+      "task_id": "T7",
+      "title": "Offers and deal state",
+      "description": "Version terms and record mutual acceptance in an append-only state machine.",
+      "stage_ids": [
+        "T7.1.1",
+        "T7.1.2"
+      ]
+    },
+    {
+      "id": "T7.2",
+      "task_id": "T7",
+      "title": "Stripe funding and payout ledger",
+      "description": "Create Checkout, webhooks, and reconciliation after Connect readiness is already enforced by T7.1.",
+      "stage_ids": [
+        "T7.2.1",
+        "T7.2.2"
+      ]
+    },
+    {
+      "id": "T7.3",
+      "task_id": "T7",
+      "title": "Delivery and controlled intervention",
+      "description": "Handle delivery, revision, dispute, payout, refund, and reversal operations.",
+      "stage_ids": [
+        "T7.3.1",
+        "T7.3.2"
+      ]
+    },
+    {
+      "id": "T8.1",
+      "task_id": "T8",
+      "title": "Guide contract",
+      "description": "Define and validate the required structure for every manual test.",
+      "stage_ids": [
+        "T8.1.1"
+      ]
+    },
+    {
+      "id": "T8.2",
+      "task_id": "T8",
+      "title": "Capability guides",
+      "description": "Document and exercise product, service, payment, and security journeys.",
+      "stage_ids": [
+        "T8.2.1",
+        "T8.2.2"
+      ]
+    },
+    {
+      "id": "T8.3",
+      "task_id": "T8",
+      "title": "Devices and environment safety",
+      "description": "Cover browser/accessibility recovery and safe production operations.",
+      "stage_ids": [
+        "T8.3.1",
+        "T8.3.2"
+      ]
+    }
+  ],
+  "stages": {
+    "T0.1.1": {
+      "task_id": "T0",
+      "step_id": "T0.1",
+      "title": "Pinned toolchain and v3 state validator",
+      "schedule_status": "active",
+      "owner": "agent-1",
+      "assignment_epoch": 1,
+      "queue_rank": 10,
+      "weight": 4,
+      "requires": [],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "file",
+          "path": ".nvmrc"
         },
-        "T1.2": {
-          "status": "pending",
-          "stages": {
-            "T1.2.1": { "status": "pending", "completed_at": null }
-          }
+        {
+          "kind": "file",
+          "path": "package.json"
         },
-        "T1.3": {
-          "status": "pending",
-          "stages": {
-            "T1.3.1": { "status": "pending", "completed_at": null }
-          }
+        {
+          "kind": "file",
+          "path": "pnpm-lock.yaml"
+        },
+        {
+          "kind": "file",
+          "path": "pnpm-workspace.yaml"
+        },
+        {
+          "kind": "file",
+          "path": "turbo.json"
+        },
+        {
+          "kind": "file",
+          "path": "tsconfig.base.json"
+        },
+        {
+          "kind": "file",
+          "path": "eslint.config.mjs"
+        },
+        {
+          "kind": "file",
+          "path": ".prettierrc.json"
+        },
+        {
+          "kind": "tree",
+          "path": "scripts/state"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T0.1.1/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T0.1.1/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T0.1.1/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T0.1.1/tier4_integration"
         }
       }
     },
-    "T2": {
-      "status": "pending",
-      "steps": {
-        "T2.1": {
-          "status": "pending",
-          "stages": {
-            "T2.1.1": { "status": "pending", "completed_at": null },
-            "T2.1.2": { "status": "pending", "completed_at": null }
-          }
+    "T0.1.2": {
+      "task_id": "T0",
+      "step_id": "T0.1",
+      "title": "Bilingual content and reference-asset contract",
+      "schedule_status": "active",
+      "owner": "agent-1",
+      "assignment_epoch": 1,
+      "queue_rank": 20,
+      "weight": 3,
+      "requires": [
+        "T0.1.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "tree",
+          "path": "content"
         },
-        "T2.2": {
-          "status": "pending",
-          "stages": {
-            "T2.2.1": { "status": "pending", "completed_at": null },
-            "T2.2.2": { "status": "pending", "completed_at": null }
-          }
+        {
+          "kind": "tree",
+          "path": "scripts/content"
         },
-        "T2.3": {
-          "status": "pending",
-          "stages": {
-            "T2.3.1": { "status": "pending", "completed_at": null },
-            "T2.3.2": { "status": "pending", "completed_at": null }
-          }
+        {
+          "kind": "file",
+          "path": "docs/references/assets.json"
+        },
+        {
+          "kind": "file",
+          "path": "docs/references/flows/README.md"
+        },
+        {
+          "kind": "file",
+          "path": "jackandJillPics/README.md"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T0.1.2/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T0.1.2/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T0.1.2/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T0.1.2/tier4_integration"
         }
       }
     },
-    "T3": {
-      "status": "pending",
-      "steps": {
-        "T3.1": {
-          "status": "pending",
-          "stages": {
-            "T3.1.1": { "status": "pending", "completed_at": null },
-            "T3.1.2": { "status": "pending", "completed_at": null }
-          }
+    "T0.2.1": {
+      "task_id": "T0",
+      "step_id": "T0.2",
+      "title": "Redacted environment and provider bootstrap",
+      "schedule_status": "active",
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 30,
+      "weight": 4,
+      "requires": [
+        "T0.1.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "file",
+          "path": ".env.example"
         },
-        "T3.2": {
-          "status": "pending",
-          "stages": {
-            "T3.2.1": { "status": "pending", "completed_at": null },
-            "T3.2.2": { "status": "pending", "completed_at": null }
-          }
+        {
+          "kind": "file",
+          "path": "scripts/tsconfig.json"
+        },
+        {
+          "kind": "tree",
+          "path": "scripts/bootstrap"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T0.2.1/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T0.2.1/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T0.2.1/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T0.2.1/tier4_integration"
         }
       }
     },
-    "T4": {
-      "status": "pending",
-      "steps": {
-        "T4.1": {
-          "status": "pending",
-          "stages": {
-            "T4.1.1": { "status": "pending", "completed_at": null }
-          }
+    "T0.2.2": {
+      "task_id": "T0",
+      "step_id": "T0.2",
+      "title": "Hermes custom-provider smoke and sanitized receipt",
+      "schedule_status": "active",
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 40,
+      "weight": 3,
+      "requires": [
+        "T0.2.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "file",
+          "path": ".hermes/config.example.yaml"
         },
-        "T4.2": {
-          "status": "pending",
-          "stages": {
-            "T4.2.1": { "status": "pending", "completed_at": null }
-          }
+        {
+          "kind": "file",
+          "path": ".gitignore"
         },
-        "T4.3": {
-          "status": "pending",
-          "stages": {
-            "T4.3.1": { "status": "pending", "completed_at": null }
-          }
+        {
+          "kind": "tree",
+          "path": "scripts/bootstrap"
+        },
+        {
+          "kind": "tree",
+          "path": "docs/hackathon/hermes-receipts"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T0.2.2/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T0.2.2/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T0.2.2/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T0.2.2/tier4_integration"
         }
       }
     },
-    "T5": {
-      "status": "pending",
-      "steps": {
-        "T5.1": {
-          "status": "pending",
-          "stages": {
-            "T5.1.1": { "status": "pending", "completed_at": null }
-          }
+    "T1.1.1": {
+      "task_id": "T1",
+      "step_id": "T1.1",
+      "title": "Workspace package scaffold and CI",
+      "schedule_status": "active",
+      "owner": "agent-1",
+      "assignment_epoch": 1,
+      "queue_rank": 50,
+      "weight": 5,
+      "requires": [
+        "T0.1.2",
+        "T0.2.2"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "file",
+          "path": "package.json"
         },
-        "T5.2": {
-          "status": "pending",
-          "stages": {
-            "T5.2.1": { "status": "pending", "completed_at": null }
-          }
+        {
+          "kind": "file",
+          "path": "pnpm-lock.yaml"
+        },
+        {
+          "kind": "file",
+          "path": "pnpm-workspace.yaml"
+        },
+        {
+          "kind": "file",
+          "path": "turbo.json"
+        },
+        {
+          "kind": "file",
+          "path": ".github/workflows/ci.yml"
+        },
+        {
+          "kind": "file",
+          "path": "apps/web/package.json"
+        },
+        {
+          "kind": "tree",
+          "path": "packages"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T1.1.1/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T1.1.1/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T1.1.1/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T1.1.1/tier4_integration"
         }
       }
     },
-    "T6": {
-      "status": "pending",
-      "steps": {
-        "T6.1": {
-          "status": "pending",
-          "stages": {
-            "T6.1.1": { "status": "pending", "completed_at": null },
-            "T6.1.2": { "status": "pending", "completed_at": null }
-          }
+    "T1.1.2": {
+      "task_id": "T1",
+      "step_id": "T1.1",
+      "title": "Next.js 16 bilingual web foundation",
+      "schedule_status": "active",
+      "owner": "agent-1",
+      "assignment_epoch": 1,
+      "queue_rank": 60,
+      "weight": 5,
+      "requires": [
+        "T1.1.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "tree",
+          "path": "apps/web"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T1.1.2/tier1_build"
         },
-        "T6.2": {
-          "status": "pending",
-          "stages": {
-            "T6.2.1": { "status": "pending", "completed_at": null },
-            "T6.2.2": { "status": "pending", "completed_at": null }
-          }
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T1.1.2/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T1.1.2/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T1.1.2/tier4_integration"
         }
       }
     },
-    "T7": {
-      "status": "pending",
-      "steps": {
-        "T7.1": {
-          "status": "pending",
-          "stages": {
-            "T7.1.1": { "status": "pending", "completed_at": null },
-            "T7.1.2": { "status": "pending", "completed_at": null }
-          }
+    "T1.2.1": {
+      "task_id": "T1",
+      "step_id": "T1.2",
+      "title": "Versioned shared schemas and state machines",
+      "schedule_status": "active",
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 70,
+      "weight": 6,
+      "requires": [
+        "T1.1.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "tree",
+          "path": "packages/shared"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T1.2.1/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T1.2.1/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T1.2.1/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T1.2.1/tier4_integration"
+        }
+      }
+    },
+    "T1.2.2": {
+      "task_id": "T1",
+      "step_id": "T1.2",
+      "title": "Firebase emulators, default-deny rules, and test support",
+      "schedule_status": "active",
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 80,
+      "weight": 5,
+      "requires": [
+        "T1.2.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "tree",
+          "path": "infra/firebase"
+        },
+        {
+          "kind": "tree",
+          "path": "packages/test-support"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T1.2.2/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T1.2.2/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T1.2.2/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T1.2.2/tier4_integration"
+        }
+      }
+    },
+    "T1.3.1": {
+      "task_id": "T1",
+      "step_id": "T1.3",
+      "title": "Authentication helpers and typed repositories",
+      "schedule_status": "active",
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 90,
+      "weight": 6,
+      "requires": [
+        "T1.1.2",
+        "T1.2.2"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "tree",
+          "path": "packages/auth"
+        },
+        {
+          "kind": "tree",
+          "path": "packages/db"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T1.3.1/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T1.3.1/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T1.3.1/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T1.3.1/tier4_integration"
+        }
+      }
+    },
+    "T2.1.1": {
+      "task_id": "T2",
+      "step_id": "T2.1",
+      "title": "Warm bilingual marketing experience",
+      "schedule_status": "active",
+      "owner": "agent-1",
+      "assignment_epoch": 1,
+      "queue_rank": 100,
+      "weight": 7,
+      "requires": [
+        "T1.1.2"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "file",
+          "path": "apps/web/app/globals.css"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/[locale]/(marketing)"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/components/ui"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/components/marketing"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/public/marketing"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/marketing"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T2.1.1/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T2.1.1/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T2.1.1/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T2.1.1/tier4_integration"
+        }
+      }
+    },
+    "T2.2.1": {
+      "task_id": "T2",
+      "step_id": "T2.2",
+      "title": "Accessible bilingual waitlist experience",
+      "schedule_status": "active",
+      "owner": "agent-1",
+      "assignment_epoch": 1,
+      "queue_rank": 110,
+      "weight": 6,
+      "requires": [
+        "T2.1.1",
+        "T1.2.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "tree",
+          "path": "apps/web/app/[locale]/(marketing)/waitlist"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/components/waitlist"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/waitlist"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T2.2.1/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T2.2.1/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T2.2.1/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T2.2.1/tier4_integration"
+        }
+      }
+    },
+    "T2.2.2": {
+      "task_id": "T2",
+      "step_id": "T2.2",
+      "title": "Waitlist API, invitations, email, and audit",
+      "schedule_status": "active",
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 120,
+      "weight": 7,
+      "requires": [
+        "T1.3.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "file",
+          "path": "packages/db/src/repositories/waitlist.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/src/repositories/invitations.ts"
+        },
+        {
+          "kind": "tree",
+          "path": "packages/email"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/waitlist"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/admin/invitations"
+        },
+        {
+          "kind": "tree",
+          "path": "scripts/admin/waitlist"
+        },
+        {
+          "kind": "file",
+          "path": "packages/test-support/src/fakes/email.ts"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/api/waitlist"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T2.2.2/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T2.2.2/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T2.2.2/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T2.2.2/tier4_integration"
+        }
+      }
+    },
+    "T2.3.1": {
+      "task_id": "T2",
+      "step_id": "T2.3",
+      "title": "Analytics, complete waitlist E2E, and deploy evidence",
+      "schedule_status": "active",
+      "owner": "agent-1",
+      "assignment_epoch": 1,
+      "queue_rank": 130,
+      "weight": 4,
+      "requires": [
+        "T2.2.1",
+        "T2.2.2"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "tree",
+          "path": "apps/web/components/analytics"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/src/analytics"
+        },
+        {
+          "kind": "file",
+          "path": "apps/web/e2e/marketing-waitlist.spec.ts"
+        },
+        {
+          "kind": "file",
+          "path": "apps/web/playwright.config.ts"
+        },
+        {
+          "kind": "file",
+          "path": "docs/testing/t2-waitlist.md"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T2.3.1/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T2.3.1/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T2.3.1/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T2.3.1/tier4_integration"
+        }
+      }
+    },
+    "T3.1.1": {
+      "task_id": "T3",
+      "step_id": "T3.1",
+      "title": "Invitation consumption, immutable roles, and secure sessions",
+      "schedule_status": "active",
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 140,
+      "weight": 7,
+      "requires": [
+        "T2.2.2"
+      ],
+      "gate_requires": [
+        "G2.WAITLIST_APPROVAL"
+      ],
+      "writes": [
+        {
+          "kind": "file",
+          "path": "packages/auth/src/session.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/auth/src/csrf.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/auth/src/authorization.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/src/repositories/users.ts"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/auth"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/api/auth"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T3.1.1/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T3.1.1/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T3.1.1/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T3.1.1/tier4_integration"
+        }
+      }
+    },
+    "T3.1.2": {
+      "task_id": "T3",
+      "step_id": "T3.1",
+      "title": "Bilingual sign-in and invitation registration UI",
+      "schedule_status": "active",
+      "owner": "agent-1",
+      "assignment_epoch": 1,
+      "queue_rank": 150,
+      "weight": 5,
+      "requires": [
+        "T1.2.1"
+      ],
+      "gate_requires": [
+        "G2.WAITLIST_APPROVAL"
+      ],
+      "writes": [
+        {
+          "kind": "tree",
+          "path": "apps/web/app/[locale]/(auth)"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/components/auth"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/auth"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T3.1.2/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T3.1.2/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T3.1.2/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T3.1.2/tier4_integration"
+        }
+      }
+    },
+    "T3.2.1": {
+      "task_id": "T3",
+      "step_id": "T3.2",
+      "title": "Creator and brand application shells",
+      "schedule_status": "active",
+      "owner": "agent-1",
+      "assignment_epoch": 1,
+      "queue_rank": 160,
+      "weight": 5,
+      "requires": [
+        "T3.1.1",
+        "T3.1.2"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "tree",
+          "path": "apps/web/app/[locale]/(app)"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/components/app-shell"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/app-shell"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T3.2.1/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T3.2.1/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T3.2.1/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T3.2.1/tier4_integration"
+        }
+      }
+    },
+    "T3.2.2": {
+      "task_id": "T3",
+      "step_id": "T3.2",
+      "title": "Owner/admin media authorization and full auth E2E",
+      "schedule_status": "active",
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 170,
+      "weight": 6,
+      "requires": [
+        "T3.1.1",
+        "T3.2.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "file",
+          "path": "infra/firebase/firestore.rules"
+        },
+        {
+          "kind": "file",
+          "path": "infra/firebase/storage.rules"
+        },
+        {
+          "kind": "file",
+          "path": "infra/firebase/tests/auth-media.rules.test.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/auth/src/media-authorization.ts"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/media"
+        },
+        {
+          "kind": "file",
+          "path": "apps/web/e2e/invited-auth.spec.ts"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T3.2.2/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T3.2.2/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T3.2.2/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T3.2.2/tier4_integration"
+        }
+      }
+    },
+    "T4.1.1": {
+      "task_id": "T4",
+      "step_id": "T4.1",
+      "title": "ElevenLabs and Superlinked typed clients",
+      "schedule_status": "active",
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 180,
+      "weight": 7,
+      "requires": [
+        "T3.2.2"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "tree",
+          "path": "packages/voice"
+        },
+        {
+          "kind": "tree",
+          "path": "packages/agents/src/superlinked"
+        },
+        {
+          "kind": "tree",
+          "path": "packages/agents/tests/superlinked"
+        },
+        {
+          "kind": "file",
+          "path": "packages/test-support/src/fakes/elevenlabs.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/test-support/src/fakes/superlinked.ts"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T4.1.1/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T4.1.1/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T4.1.1/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T4.1.1/tier4_integration"
+        }
+      }
+    },
+    "T4.1.2": {
+      "task_id": "T4",
+      "step_id": "T4.1",
+      "title": "Jick extraction, persistence, consent, deletion, and APIs",
+      "schedule_status": "active",
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 190,
+      "weight": 8,
+      "requires": [
+        "T4.1.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "tree",
+          "path": "packages/agents/src/jick"
+        },
+        {
+          "kind": "tree",
+          "path": "packages/agents/tests/jick"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/src/repositories/voice-sessions.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/src/repositories/creator-profiles.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/src/repositories/audit-events.ts"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/voice"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/creator/profile"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/account/export"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/api/jick"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/internal/voice-retention"
+        },
+        {
+          "kind": "tree",
+          "path": "scripts/admin/voice-retention"
+        },
+        {
+          "kind": "file",
+          "path": "vercel.json"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T4.1.2/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T4.1.2/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T4.1.2/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T4.1.2/tier4_integration"
+        }
+      }
+    },
+    "T4.2.1": {
+      "task_id": "T4",
+      "step_id": "T4.2",
+      "title": "Voice/text interview and editable generated profile",
+      "schedule_status": "active",
+      "owner": "agent-1",
+      "assignment_epoch": 1,
+      "queue_rank": 200,
+      "weight": 8,
+      "requires": [
+        "T4.1.2",
+        "T3.2.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "tree",
+          "path": "apps/web/app/[locale]/(app)/creator/onboarding"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/components/onboarding"
+        },
+        {
+          "kind": "file",
+          "path": "apps/web/hooks/use-voice-session.ts"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/onboarding"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T4.2.1/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T4.2.1/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T4.2.1/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T4.2.1/tier4_integration"
+        }
+      }
+    },
+    "T4.2.2": {
+      "task_id": "T4",
+      "step_id": "T4.2",
+      "title": "Published profile, playback, deletion/export, and Jick E2E",
+      "schedule_status": "active",
+      "owner": "agent-1",
+      "assignment_epoch": 1,
+      "queue_rank": 210,
+      "weight": 7,
+      "requires": [
+        "T4.1.2",
+        "T4.2.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "tree",
+          "path": "apps/web/app/[locale]/(app)/creator/profile"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/[locale]/(app)/creator/settings/privacy"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/components/creator-profile"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/components/recordings"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/creator-profile"
+        },
+        {
+          "kind": "file",
+          "path": "apps/web/e2e/jick-complete.spec.ts"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T4.2.2/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T4.2.2/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T4.2.2/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T4.2.2/tier4_integration"
+        }
+      }
+    },
+    "T5.1.1": {
+      "task_id": "T5",
+      "step_id": "T5.1",
+      "title": "Jall extraction and persistence",
+      "schedule_status": "active",
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 220,
+      "weight": 6,
+      "requires": [
+        "T4.1.1",
+        "T4.1.2"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "tree",
+          "path": "packages/agents/src/jall"
+        },
+        {
+          "kind": "tree",
+          "path": "packages/agents/tests/jall"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/src/repositories/brand-profiles.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/src/repositories/campaigns.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/tests/brand-profiles.test.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/tests/campaigns.test.ts"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T5.1.1/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T5.1.1/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T5.1.1/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T5.1.1/tier4_integration"
+        }
+      }
+    },
+    "T5.1.2": {
+      "task_id": "T5",
+      "step_id": "T5.1",
+      "title": "Authenticated Jall APIs",
+      "schedule_status": "active",
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 230,
+      "weight": 4,
+      "requires": [
+        "T3.1.1",
+        "T5.1.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/jall"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/api/jall"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T5.1.2/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T5.1.2/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T5.1.2/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T5.1.2/tier4_integration"
+        }
+      }
+    },
+    "T5.2.1": {
+      "task_id": "T5",
+      "step_id": "T5.2",
+      "title": "Bilingual voice/text campaign intake",
+      "schedule_status": "active",
+      "owner": "agent-1",
+      "assignment_epoch": 1,
+      "queue_rank": 240,
+      "weight": 6,
+      "requires": [
+        "T4.2.2",
+        "T5.1.2"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "tree",
+          "path": "apps/web/app/[locale]/(app)/brand/onboarding"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/components/jall"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/components/jall"
+        },
+        {
+          "kind": "file",
+          "path": "apps/web/e2e/jall-onboarding.spec.ts"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T5.2.1/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T5.2.1/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T5.2.1/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T5.2.1/tier4_integration"
+        }
+      }
+    },
+    "T5.2.2": {
+      "task_id": "T5",
+      "step_id": "T5.2",
+      "title": "Brand profile and brief review/publish",
+      "schedule_status": "active",
+      "owner": "agent-1",
+      "assignment_epoch": 1,
+      "queue_rank": 250,
+      "weight": 4,
+      "requires": [
+        "T5.2.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "tree",
+          "path": "apps/web/app/[locale]/(app)/brand/profile"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/[locale]/(app)/brand/campaigns"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/components/brand-editors"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/components/brand-editors"
+        },
+        {
+          "kind": "file",
+          "path": "apps/web/e2e/brand-edit-publish.spec.ts"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T5.2.2/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T5.2.2/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T5.2.2/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T5.2.2/tier4_integration"
+        }
+      }
+    },
+    "T6.1.1": {
+      "task_id": "T6",
+      "step_id": "T6.1",
+      "title": "Superlinked signals and deterministic ranker",
+      "schedule_status": "active",
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 260,
+      "weight": 7,
+      "requires": [
+        "T4.1.2",
+        "T5.1.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "tree",
+          "path": "packages/agents/src/matching"
+        },
+        {
+          "kind": "tree",
+          "path": "packages/agents/tests/matching"
+        },
+        {
+          "kind": "tree",
+          "path": "packages/test-support/src/fixtures/matching"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T6.1.1/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T6.1.1/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T6.1.1/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T6.1.1/tier4_integration"
+        }
+      }
+    },
+    "T6.1.2": {
+      "task_id": "T6",
+      "step_id": "T6.1",
+      "title": "Match, feedback, consent, and disclosure APIs",
+      "schedule_status": "active",
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 270,
+      "weight": 6,
+      "requires": [
+        "T5.1.2",
+        "T6.1.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "file",
+          "path": "packages/db/src/repositories/matches.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/tests/matches.test.ts"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/matches"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/api/matches"
+        },
+        {
+          "kind": "tree",
+          "path": "scripts/admin/matches"
+        },
+        {
+          "kind": "file",
+          "path": "infra/firebase/firestore.rules"
+        },
+        {
+          "kind": "file",
+          "path": "infra/firebase/tests/matches.rules.test.ts"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T6.1.2/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T6.1.2/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T6.1.2/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T6.1.2/tier4_integration"
+        }
+      }
+    },
+    "T6.1.3": {
+      "task_id": "T6",
+      "step_id": "T6.1",
+      "title": "Match and consent UI",
+      "schedule_status": "active",
+      "owner": "agent-1",
+      "assignment_epoch": 1,
+      "queue_rank": 280,
+      "weight": 7,
+      "requires": [
+        "T4.2.2",
+        "T5.2.2",
+        "T6.1.2"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "tree",
+          "path": "apps/web/app/[locale]/(app)/brand/matches"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/[locale]/(app)/creator/opportunities"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/components/matches"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/components/matches"
+        },
+        {
+          "kind": "file",
+          "path": "apps/web/e2e/match-consent.spec.ts"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T6.1.3/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T6.1.3/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T6.1.3/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T6.1.3/tier4_integration"
+        }
+      }
+    },
+    "T6.2.1": {
+      "task_id": "T6",
+      "step_id": "T6.2",
+      "title": "Authorized inbox/chat repository and APIs",
+      "schedule_status": "active",
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 290,
+      "weight": 6,
+      "requires": [
+        "T6.1.2"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "file",
+          "path": "packages/db/src/repositories/conversations.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/tests/conversations.test.ts"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/conversations"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/api/conversations"
+        },
+        {
+          "kind": "file",
+          "path": "infra/firebase/firestore.rules"
+        },
+        {
+          "kind": "file",
+          "path": "infra/firebase/tests/conversations.rules.test.ts"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T6.2.1/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T6.2.1/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T6.2.1/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T6.2.1/tier4_integration"
+        }
+      }
+    },
+    "T6.2.2": {
+      "task_id": "T6",
+      "step_id": "T6.2",
+      "title": "Bilingual inbox and real-time chat UI",
+      "schedule_status": "active",
+      "owner": "agent-1",
+      "assignment_epoch": 1,
+      "queue_rank": 300,
+      "weight": 6,
+      "requires": [
+        "T6.1.3",
+        "T6.2.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "tree",
+          "path": "apps/web/app/[locale]/(app)/inbox"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/[locale]/(app)/conversations"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/components/chat"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/components/chat"
+        },
+        {
+          "kind": "file",
+          "path": "apps/web/e2e/introduction-chat.spec.ts"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T6.2.2/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T6.2.2/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T6.2.2/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T6.2.2/tier4_integration"
+        }
+      }
+    },
+    "T7.1.1": {
+      "task_id": "T7",
+      "step_id": "T7.1",
+      "title": "Versioned offers and deal event machine",
+      "schedule_status": "active",
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 310,
+      "weight": 7,
+      "requires": [
+        "T6.2.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "file",
+          "path": "packages/shared/src/deal-state.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/shared/tests/deal-state-machine.test.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/src/repositories/deals.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/src/repositories/deliveries.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/tests/deals.test.ts"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/offers"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/deals"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/api/offers"
+        },
+        {
+          "kind": "file",
+          "path": "packages/payments/src/connect.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/payments/tests/connect.test.ts"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/stripe/connect"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/api/stripe/connect"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T7.1.1/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T7.1.1/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T7.1.1/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T7.1.1/tier4_integration"
+        }
+      }
+    },
+    "T7.1.2": {
+      "task_id": "T7",
+      "step_id": "T7.1",
+      "title": "Offer composer and acceptance UI",
+      "schedule_status": "active",
+      "owner": "agent-1",
+      "assignment_epoch": 1,
+      "queue_rank": 320,
+      "weight": 5,
+      "requires": [
+        "T6.2.2",
+        "T7.1.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "tree",
+          "path": "apps/web/components/offers"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/components/offers"
+        },
+        {
+          "kind": "file",
+          "path": "apps/web/e2e/offer-versioning.spec.ts"
+        },
+        {
+          "kind": "file",
+          "path": "apps/web/components/chat/conversation.tsx"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/[locale]/(app)/settings/payouts"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/components/payments"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/components/payments"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T7.1.2/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T7.1.2/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T7.1.2/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T7.1.2/tier4_integration"
+        }
+      }
+    },
+    "T7.2.1": {
+      "task_id": "T7",
+      "step_id": "T7.2",
+      "title": "Checkout, idempotent webhooks, and ledger",
+      "schedule_status": "active",
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 330,
+      "weight": 8,
+      "requires": [
+        "T0.2.1",
+        "T7.1.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "tree",
+          "path": "packages/payments"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/src/repositories/transactions.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/tests/transactions.test.ts"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/stripe"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/api/stripe"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T7.2.1/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T7.2.1/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T7.2.1/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T7.2.1/tier4_integration"
+        }
+      }
+    },
+    "T7.2.2": {
+      "task_id": "T7",
+      "step_id": "T7.2",
+      "title": "Funding and payment status UI",
+      "schedule_status": "active",
+      "owner": "agent-1",
+      "assignment_epoch": 1,
+      "queue_rank": 340,
+      "weight": 6,
+      "requires": [
+        "T7.1.2",
+        "T7.2.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "tree",
+          "path": "apps/web/app/[locale]/(app)/deals/[dealId]/fund"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/components/payments"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/components/payments"
+        },
+        {
+          "kind": "file",
+          "path": "apps/web/e2e/connect-funding-status.spec.ts"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T7.2.2/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T7.2.2/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T7.2.2/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T7.2.2/tier4_integration"
+        }
+      }
+    },
+    "T7.3.1": {
+      "task_id": "T7",
+      "step_id": "T7.3",
+      "title": "Delivery, revision, dispute, and protected interventions",
+      "schedule_status": "active",
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 350,
+      "weight": 7,
+      "requires": [
+        "T7.2.1",
+        "T7.1.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/deliveries"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/admin/deals"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/internal/payouts/release-due"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/api/deliveries"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/api/admin"
+        },
+        {
+          "kind": "tree",
+          "path": "scripts/admin/deals"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T7.3.1/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T7.3.1/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T7.3.1/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T7.3.1/tier4_integration"
+        }
+      }
+    },
+    "T7.3.2": {
+      "task_id": "T7",
+      "step_id": "T7.3",
+      "title": "Delivery/dispute UI and complete test deal",
+      "schedule_status": "active",
+      "owner": "agent-1",
+      "assignment_epoch": 1,
+      "queue_rank": 360,
+      "weight": 6,
+      "requires": [
+        "T7.2.2",
+        "T7.3.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "tree",
+          "path": "apps/web/app/[locale]/(app)/deals/[dealId]"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/components/deliveries"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/components/deliveries"
+        },
+        {
+          "kind": "file",
+          "path": "apps/web/e2e/complete-test-deal.spec.ts"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T7.3.2/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T7.3.2/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T7.3.2/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T7.3.2/tier4_integration"
+        }
+      }
+    },
+    "T8.1.1": {
+      "task_id": "T8",
+      "step_id": "T8.1",
+      "title": "Manual-case schema and validator",
+      "schedule_status": "active",
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 370,
+      "weight": 4,
+      "requires": [
+        "T7.3.2"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "file",
+          "path": "docs/testing/manual/CASE-FORMAT.md"
+        },
+        {
+          "kind": "tree",
+          "path": "scripts/verify"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T8.1.1/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T8.1.1/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T8.1.1/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T8.1.1/tier4_integration"
+        }
+      }
+    },
+    "T8.2.1": {
+      "task_id": "T8",
+      "step_id": "T8.2",
+      "title": "Bilingual product journey guide",
+      "schedule_status": "active",
+      "owner": "agent-1",
+      "assignment_epoch": 1,
+      "queue_rank": 380,
+      "weight": 7,
+      "requires": [
+        "T8.1.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "file",
+          "path": "docs/testing/manual/10-marketing-waitlist-auth.md"
+        },
+        {
+          "kind": "file",
+          "path": "docs/testing/manual/20-onboarding-media-profiles.md"
+        },
+        {
+          "kind": "file",
+          "path": "docs/testing/manual/30-matching-chat-deals.md"
+        },
+        {
+          "kind": "file",
+          "path": "apps/web/e2e/t8-product-journeys.spec.ts"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T8.2.1/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T8.2.1/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T8.2.1/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T8.2.1/tier4_integration"
+        }
+      }
+    },
+    "T8.2.2": {
+      "task_id": "T8",
+      "step_id": "T8.2",
+      "title": "Services, payments, security, and staging guide",
+      "schedule_status": "active",
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 390,
+      "weight": 7,
+      "requires": [
+        "T8.1.1",
+        "T7.3.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "file",
+          "path": "docs/testing/manual/40-services-security.md"
+        },
+        {
+          "kind": "file",
+          "path": "docs/testing/manual/50-payments-admin.md"
+        },
+        {
+          "kind": "file",
+          "path": "docs/testing/manual/60-staging.md"
+        },
+        {
+          "kind": "file",
+          "path": "packages/test-support/tests/t8-platform-runbook.integration.test.ts"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T8.2.2/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T8.2.2/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T8.2.2/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T8.2.2/tier4_integration"
+        }
+      }
+    },
+    "T8.3.1": {
+      "task_id": "T8",
+      "step_id": "T8.3",
+      "title": "Browser, mobile, accessibility, and recovery guide",
+      "schedule_status": "active",
+      "owner": "agent-1",
+      "assignment_epoch": 1,
+      "queue_rank": 400,
+      "weight": 5,
+      "requires": [
+        "T8.2.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "file",
+          "path": "docs/testing/manual/70-browser-accessibility-recovery.md"
+        },
+        {
+          "kind": "file",
+          "path": "apps/web/e2e/t8-browser-accessibility.spec.ts"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T8.3.1/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T8.3.1/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T8.3.1/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T8.3.1/tier4_integration"
+        }
+      }
+    },
+    "T8.3.2": {
+      "task_id": "T8",
+      "step_id": "T8.3",
+      "title": "Unified environments, evidence, cleanup, and rollback runbook",
+      "schedule_status": "active",
+      "owner": "agent-1",
+      "assignment_epoch": 1,
+      "queue_rank": 410,
+      "weight": 5,
+      "requires": [
+        "T8.2.2",
+        "T8.3.1"
+      ],
+      "gate_requires": [],
+      "writes": [
+        {
+          "kind": "file",
+          "path": "docs/testing/manual/README.md"
+        },
+        {
+          "kind": "file",
+          "path": "docs/testing/manual/00-environments.md"
+        },
+        {
+          "kind": "file",
+          "path": "docs/testing/manual/EVIDENCE.md"
+        },
+        {
+          "kind": "file",
+          "path": "docs/testing/manual/ROLLBACK.md"
+        },
+        {
+          "kind": "file",
+          "path": "apps/web/e2e/t8-production-safe.spec.ts"
+        }
+      ],
+      "verification": {
+        "tier1_build": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T8.3.2/tier1_build"
+        },
+        "tier2_simplify": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T8.3.2/tier2_simplify",
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence_binding": "claim_base_plus_sorted_final_path_content_hash_manifest"
+        },
+        "tier3_unit": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T8.3.2/tier3_unit"
+        },
+        "tier4_integration": {
+          "required": true,
+          "command_ref": "docs/superpowers/specs/jick-and-jall-v1.md#T8.3.2/tier4_integration"
         }
       }
     }
   },
-  "postmortems": []
+  "human_gates": {
+    "G2.WAITLIST_APPROVAL": {
+      "revision": 1,
+      "after": [
+        "T2.3.1"
+      ],
+      "blocks": [
+        "T3.1.1",
+        "T3.1.2"
+      ],
+      "decision_recorder": "agent-1",
+      "required_for_schedule_completion": true,
+      "description": "The user approves the deployed English and Spanish waitlist on desktop and mobile."
+    },
+    "G8.LIVE_PAYMENT_ACTIVATION": {
+      "revision": 1,
+      "after": [
+        "T8.3.2"
+      ],
+      "blocks": [],
+      "decision_recorder": "agent-2",
+      "required_for_schedule_completion": false,
+      "description": "A human separately authorizes real-money Stripe activation after terms and operations are ready."
+    }
+  }
 }

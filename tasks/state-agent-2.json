@@ -1,0 +1,1238 @@
+{
+  "schema_version": "3.0",
+  "kind": "agent_runtime",
+  "project": "jick-and-jall-v1",
+  "agent_id": "agent-2",
+  "schedule_revision": 1,
+  "schedule_sha256": "e7705d38958256ff1d510edac9bb8523ef1997a3b301d89c22d12ceff28680ab",
+  "source": {
+    "spec_sha256": "3fc030487ef615145e25ceb525a4598d7a08062329a1610fdd706a6ecbf5afcc",
+    "plan_sha256": "ea71123dd914a10a319df0cd014cd31616bf272e4209b6f2243c9931bf5f7284"
+  },
+  "updated_at": "2026-07-11T00:00:00Z",
+  "queue": [
+    "T0.2.1",
+    "T0.2.2",
+    "T1.2.1",
+    "T1.2.2",
+    "T1.3.1",
+    "T2.2.2",
+    "T3.1.1",
+    "T3.2.2",
+    "T4.1.1",
+    "T4.1.2",
+    "T5.1.1",
+    "T5.1.2",
+    "T6.1.1",
+    "T6.1.2",
+    "T6.2.1",
+    "T7.1.1",
+    "T7.2.1",
+    "T7.3.1",
+    "T8.1.1",
+    "T8.2.2"
+  ],
+  "assigned_weight": 121,
+  "active_stage_id": null,
+  "stages": {
+    "T0.2.1": {
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 30,
+      "weight": 4,
+      "write_scopes": [
+        {
+          "kind": "file",
+          "path": ".env.example"
+        },
+        {
+          "kind": "file",
+          "path": "scripts/tsconfig.json"
+        },
+        {
+          "kind": "tree",
+          "path": "scripts/bootstrap"
+        }
+      ],
+      "status": "pending",
+      "phase": "not_started",
+      "current_tier": null,
+      "claim": null,
+      "checkpoints": [],
+      "verification": {
+        "tier1_build": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier2_simplify": {
+          "status": "pending",
+          "attempts": [],
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence": null
+        },
+        "tier3_unit": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier4_integration": {
+          "status": "pending",
+          "attempts": []
+        }
+      },
+      "changed_files": [],
+      "blockers": [],
+      "resumption_note": null,
+      "completion": null,
+      "started_at": null,
+      "updated_at": null
+    },
+    "T0.2.2": {
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 40,
+      "weight": 3,
+      "write_scopes": [
+        {
+          "kind": "file",
+          "path": ".hermes/config.example.yaml"
+        },
+        {
+          "kind": "file",
+          "path": ".gitignore"
+        },
+        {
+          "kind": "tree",
+          "path": "scripts/bootstrap"
+        },
+        {
+          "kind": "tree",
+          "path": "docs/hackathon/hermes-receipts"
+        }
+      ],
+      "status": "pending",
+      "phase": "not_started",
+      "current_tier": null,
+      "claim": null,
+      "checkpoints": [],
+      "verification": {
+        "tier1_build": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier2_simplify": {
+          "status": "pending",
+          "attempts": [],
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence": null
+        },
+        "tier3_unit": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier4_integration": {
+          "status": "pending",
+          "attempts": []
+        }
+      },
+      "changed_files": [],
+      "blockers": [],
+      "resumption_note": null,
+      "completion": null,
+      "started_at": null,
+      "updated_at": null
+    },
+    "T1.2.1": {
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 70,
+      "weight": 6,
+      "write_scopes": [
+        {
+          "kind": "tree",
+          "path": "packages/shared"
+        }
+      ],
+      "status": "pending",
+      "phase": "not_started",
+      "current_tier": null,
+      "claim": null,
+      "checkpoints": [],
+      "verification": {
+        "tier1_build": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier2_simplify": {
+          "status": "pending",
+          "attempts": [],
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence": null
+        },
+        "tier3_unit": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier4_integration": {
+          "status": "pending",
+          "attempts": []
+        }
+      },
+      "changed_files": [],
+      "blockers": [],
+      "resumption_note": null,
+      "completion": null,
+      "started_at": null,
+      "updated_at": null
+    },
+    "T1.2.2": {
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 80,
+      "weight": 5,
+      "write_scopes": [
+        {
+          "kind": "tree",
+          "path": "infra/firebase"
+        },
+        {
+          "kind": "tree",
+          "path": "packages/test-support"
+        }
+      ],
+      "status": "pending",
+      "phase": "not_started",
+      "current_tier": null,
+      "claim": null,
+      "checkpoints": [],
+      "verification": {
+        "tier1_build": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier2_simplify": {
+          "status": "pending",
+          "attempts": [],
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence": null
+        },
+        "tier3_unit": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier4_integration": {
+          "status": "pending",
+          "attempts": []
+        }
+      },
+      "changed_files": [],
+      "blockers": [],
+      "resumption_note": null,
+      "completion": null,
+      "started_at": null,
+      "updated_at": null
+    },
+    "T1.3.1": {
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 90,
+      "weight": 6,
+      "write_scopes": [
+        {
+          "kind": "tree",
+          "path": "packages/auth"
+        },
+        {
+          "kind": "tree",
+          "path": "packages/db"
+        }
+      ],
+      "status": "pending",
+      "phase": "not_started",
+      "current_tier": null,
+      "claim": null,
+      "checkpoints": [],
+      "verification": {
+        "tier1_build": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier2_simplify": {
+          "status": "pending",
+          "attempts": [],
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence": null
+        },
+        "tier3_unit": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier4_integration": {
+          "status": "pending",
+          "attempts": []
+        }
+      },
+      "changed_files": [],
+      "blockers": [],
+      "resumption_note": null,
+      "completion": null,
+      "started_at": null,
+      "updated_at": null
+    },
+    "T2.2.2": {
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 120,
+      "weight": 7,
+      "write_scopes": [
+        {
+          "kind": "file",
+          "path": "packages/db/src/repositories/waitlist.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/src/repositories/invitations.ts"
+        },
+        {
+          "kind": "tree",
+          "path": "packages/email"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/waitlist"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/admin/invitations"
+        },
+        {
+          "kind": "tree",
+          "path": "scripts/admin/waitlist"
+        },
+        {
+          "kind": "file",
+          "path": "packages/test-support/src/fakes/email.ts"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/api/waitlist"
+        }
+      ],
+      "status": "pending",
+      "phase": "not_started",
+      "current_tier": null,
+      "claim": null,
+      "checkpoints": [],
+      "verification": {
+        "tier1_build": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier2_simplify": {
+          "status": "pending",
+          "attempts": [],
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence": null
+        },
+        "tier3_unit": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier4_integration": {
+          "status": "pending",
+          "attempts": []
+        }
+      },
+      "changed_files": [],
+      "blockers": [],
+      "resumption_note": null,
+      "completion": null,
+      "started_at": null,
+      "updated_at": null
+    },
+    "T3.1.1": {
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 140,
+      "weight": 7,
+      "write_scopes": [
+        {
+          "kind": "file",
+          "path": "packages/auth/src/session.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/auth/src/csrf.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/auth/src/authorization.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/src/repositories/users.ts"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/auth"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/api/auth"
+        }
+      ],
+      "status": "pending",
+      "phase": "not_started",
+      "current_tier": null,
+      "claim": null,
+      "checkpoints": [],
+      "verification": {
+        "tier1_build": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier2_simplify": {
+          "status": "pending",
+          "attempts": [],
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence": null
+        },
+        "tier3_unit": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier4_integration": {
+          "status": "pending",
+          "attempts": []
+        }
+      },
+      "changed_files": [],
+      "blockers": [],
+      "resumption_note": null,
+      "completion": null,
+      "started_at": null,
+      "updated_at": null
+    },
+    "T3.2.2": {
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 170,
+      "weight": 6,
+      "write_scopes": [
+        {
+          "kind": "file",
+          "path": "infra/firebase/firestore.rules"
+        },
+        {
+          "kind": "file",
+          "path": "infra/firebase/storage.rules"
+        },
+        {
+          "kind": "file",
+          "path": "infra/firebase/tests/auth-media.rules.test.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/auth/src/media-authorization.ts"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/media"
+        },
+        {
+          "kind": "file",
+          "path": "apps/web/e2e/invited-auth.spec.ts"
+        }
+      ],
+      "status": "pending",
+      "phase": "not_started",
+      "current_tier": null,
+      "claim": null,
+      "checkpoints": [],
+      "verification": {
+        "tier1_build": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier2_simplify": {
+          "status": "pending",
+          "attempts": [],
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence": null
+        },
+        "tier3_unit": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier4_integration": {
+          "status": "pending",
+          "attempts": []
+        }
+      },
+      "changed_files": [],
+      "blockers": [],
+      "resumption_note": null,
+      "completion": null,
+      "started_at": null,
+      "updated_at": null
+    },
+    "T4.1.1": {
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 180,
+      "weight": 7,
+      "write_scopes": [
+        {
+          "kind": "tree",
+          "path": "packages/voice"
+        },
+        {
+          "kind": "tree",
+          "path": "packages/agents/src/superlinked"
+        },
+        {
+          "kind": "tree",
+          "path": "packages/agents/tests/superlinked"
+        },
+        {
+          "kind": "file",
+          "path": "packages/test-support/src/fakes/elevenlabs.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/test-support/src/fakes/superlinked.ts"
+        }
+      ],
+      "status": "pending",
+      "phase": "not_started",
+      "current_tier": null,
+      "claim": null,
+      "checkpoints": [],
+      "verification": {
+        "tier1_build": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier2_simplify": {
+          "status": "pending",
+          "attempts": [],
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence": null
+        },
+        "tier3_unit": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier4_integration": {
+          "status": "pending",
+          "attempts": []
+        }
+      },
+      "changed_files": [],
+      "blockers": [],
+      "resumption_note": null,
+      "completion": null,
+      "started_at": null,
+      "updated_at": null
+    },
+    "T4.1.2": {
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 190,
+      "weight": 8,
+      "write_scopes": [
+        {
+          "kind": "tree",
+          "path": "packages/agents/src/jick"
+        },
+        {
+          "kind": "tree",
+          "path": "packages/agents/tests/jick"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/src/repositories/voice-sessions.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/src/repositories/creator-profiles.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/src/repositories/audit-events.ts"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/voice"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/creator/profile"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/account/export"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/api/jick"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/internal/voice-retention"
+        },
+        {
+          "kind": "tree",
+          "path": "scripts/admin/voice-retention"
+        },
+        {
+          "kind": "file",
+          "path": "vercel.json"
+        }
+      ],
+      "status": "pending",
+      "phase": "not_started",
+      "current_tier": null,
+      "claim": null,
+      "checkpoints": [],
+      "verification": {
+        "tier1_build": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier2_simplify": {
+          "status": "pending",
+          "attempts": [],
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence": null
+        },
+        "tier3_unit": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier4_integration": {
+          "status": "pending",
+          "attempts": []
+        }
+      },
+      "changed_files": [],
+      "blockers": [],
+      "resumption_note": null,
+      "completion": null,
+      "started_at": null,
+      "updated_at": null
+    },
+    "T5.1.1": {
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 220,
+      "weight": 6,
+      "write_scopes": [
+        {
+          "kind": "tree",
+          "path": "packages/agents/src/jall"
+        },
+        {
+          "kind": "tree",
+          "path": "packages/agents/tests/jall"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/src/repositories/brand-profiles.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/src/repositories/campaigns.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/tests/brand-profiles.test.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/tests/campaigns.test.ts"
+        }
+      ],
+      "status": "pending",
+      "phase": "not_started",
+      "current_tier": null,
+      "claim": null,
+      "checkpoints": [],
+      "verification": {
+        "tier1_build": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier2_simplify": {
+          "status": "pending",
+          "attempts": [],
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence": null
+        },
+        "tier3_unit": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier4_integration": {
+          "status": "pending",
+          "attempts": []
+        }
+      },
+      "changed_files": [],
+      "blockers": [],
+      "resumption_note": null,
+      "completion": null,
+      "started_at": null,
+      "updated_at": null
+    },
+    "T5.1.2": {
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 230,
+      "weight": 4,
+      "write_scopes": [
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/jall"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/api/jall"
+        }
+      ],
+      "status": "pending",
+      "phase": "not_started",
+      "current_tier": null,
+      "claim": null,
+      "checkpoints": [],
+      "verification": {
+        "tier1_build": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier2_simplify": {
+          "status": "pending",
+          "attempts": [],
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence": null
+        },
+        "tier3_unit": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier4_integration": {
+          "status": "pending",
+          "attempts": []
+        }
+      },
+      "changed_files": [],
+      "blockers": [],
+      "resumption_note": null,
+      "completion": null,
+      "started_at": null,
+      "updated_at": null
+    },
+    "T6.1.1": {
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 260,
+      "weight": 7,
+      "write_scopes": [
+        {
+          "kind": "tree",
+          "path": "packages/agents/src/matching"
+        },
+        {
+          "kind": "tree",
+          "path": "packages/agents/tests/matching"
+        },
+        {
+          "kind": "tree",
+          "path": "packages/test-support/src/fixtures/matching"
+        }
+      ],
+      "status": "pending",
+      "phase": "not_started",
+      "current_tier": null,
+      "claim": null,
+      "checkpoints": [],
+      "verification": {
+        "tier1_build": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier2_simplify": {
+          "status": "pending",
+          "attempts": [],
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence": null
+        },
+        "tier3_unit": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier4_integration": {
+          "status": "pending",
+          "attempts": []
+        }
+      },
+      "changed_files": [],
+      "blockers": [],
+      "resumption_note": null,
+      "completion": null,
+      "started_at": null,
+      "updated_at": null
+    },
+    "T6.1.2": {
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 270,
+      "weight": 6,
+      "write_scopes": [
+        {
+          "kind": "file",
+          "path": "packages/db/src/repositories/matches.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/tests/matches.test.ts"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/matches"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/api/matches"
+        },
+        {
+          "kind": "tree",
+          "path": "scripts/admin/matches"
+        },
+        {
+          "kind": "file",
+          "path": "infra/firebase/firestore.rules"
+        },
+        {
+          "kind": "file",
+          "path": "infra/firebase/tests/matches.rules.test.ts"
+        }
+      ],
+      "status": "pending",
+      "phase": "not_started",
+      "current_tier": null,
+      "claim": null,
+      "checkpoints": [],
+      "verification": {
+        "tier1_build": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier2_simplify": {
+          "status": "pending",
+          "attempts": [],
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence": null
+        },
+        "tier3_unit": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier4_integration": {
+          "status": "pending",
+          "attempts": []
+        }
+      },
+      "changed_files": [],
+      "blockers": [],
+      "resumption_note": null,
+      "completion": null,
+      "started_at": null,
+      "updated_at": null
+    },
+    "T6.2.1": {
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 290,
+      "weight": 6,
+      "write_scopes": [
+        {
+          "kind": "file",
+          "path": "packages/db/src/repositories/conversations.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/tests/conversations.test.ts"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/conversations"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/api/conversations"
+        },
+        {
+          "kind": "file",
+          "path": "infra/firebase/firestore.rules"
+        },
+        {
+          "kind": "file",
+          "path": "infra/firebase/tests/conversations.rules.test.ts"
+        }
+      ],
+      "status": "pending",
+      "phase": "not_started",
+      "current_tier": null,
+      "claim": null,
+      "checkpoints": [],
+      "verification": {
+        "tier1_build": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier2_simplify": {
+          "status": "pending",
+          "attempts": [],
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence": null
+        },
+        "tier3_unit": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier4_integration": {
+          "status": "pending",
+          "attempts": []
+        }
+      },
+      "changed_files": [],
+      "blockers": [],
+      "resumption_note": null,
+      "completion": null,
+      "started_at": null,
+      "updated_at": null
+    },
+    "T7.1.1": {
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 310,
+      "weight": 7,
+      "write_scopes": [
+        {
+          "kind": "file",
+          "path": "packages/shared/src/deal-state.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/shared/tests/deal-state-machine.test.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/src/repositories/deals.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/src/repositories/deliveries.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/tests/deals.test.ts"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/offers"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/deals"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/api/offers"
+        },
+        {
+          "kind": "file",
+          "path": "packages/payments/src/connect.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/payments/tests/connect.test.ts"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/stripe/connect"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/api/stripe/connect"
+        }
+      ],
+      "status": "pending",
+      "phase": "not_started",
+      "current_tier": null,
+      "claim": null,
+      "checkpoints": [],
+      "verification": {
+        "tier1_build": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier2_simplify": {
+          "status": "pending",
+          "attempts": [],
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence": null
+        },
+        "tier3_unit": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier4_integration": {
+          "status": "pending",
+          "attempts": []
+        }
+      },
+      "changed_files": [],
+      "blockers": [],
+      "resumption_note": null,
+      "completion": null,
+      "started_at": null,
+      "updated_at": null
+    },
+    "T7.2.1": {
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 330,
+      "weight": 8,
+      "write_scopes": [
+        {
+          "kind": "tree",
+          "path": "packages/payments"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/src/repositories/transactions.ts"
+        },
+        {
+          "kind": "file",
+          "path": "packages/db/tests/transactions.test.ts"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/stripe"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/api/stripe"
+        }
+      ],
+      "status": "pending",
+      "phase": "not_started",
+      "current_tier": null,
+      "claim": null,
+      "checkpoints": [],
+      "verification": {
+        "tier1_build": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier2_simplify": {
+          "status": "pending",
+          "attempts": [],
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence": null
+        },
+        "tier3_unit": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier4_integration": {
+          "status": "pending",
+          "attempts": []
+        }
+      },
+      "changed_files": [],
+      "blockers": [],
+      "resumption_note": null,
+      "completion": null,
+      "started_at": null,
+      "updated_at": null
+    },
+    "T7.3.1": {
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 350,
+      "weight": 7,
+      "write_scopes": [
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/deliveries"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/admin/deals"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/app/api/internal/payouts/release-due"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/api/deliveries"
+        },
+        {
+          "kind": "tree",
+          "path": "apps/web/tests/api/admin"
+        },
+        {
+          "kind": "tree",
+          "path": "scripts/admin/deals"
+        }
+      ],
+      "status": "pending",
+      "phase": "not_started",
+      "current_tier": null,
+      "claim": null,
+      "checkpoints": [],
+      "verification": {
+        "tier1_build": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier2_simplify": {
+          "status": "pending",
+          "attempts": [],
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence": null
+        },
+        "tier3_unit": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier4_integration": {
+          "status": "pending",
+          "attempts": []
+        }
+      },
+      "changed_files": [],
+      "blockers": [],
+      "resumption_note": null,
+      "completion": null,
+      "started_at": null,
+      "updated_at": null
+    },
+    "T8.1.1": {
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 370,
+      "weight": 4,
+      "write_scopes": [
+        {
+          "kind": "file",
+          "path": "docs/testing/manual/CASE-FORMAT.md"
+        },
+        {
+          "kind": "tree",
+          "path": "scripts/verify"
+        }
+      ],
+      "status": "pending",
+      "phase": "not_started",
+      "current_tier": null,
+      "claim": null,
+      "checkpoints": [],
+      "verification": {
+        "tier1_build": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier2_simplify": {
+          "status": "pending",
+          "attempts": [],
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence": null
+        },
+        "tier3_unit": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier4_integration": {
+          "status": "pending",
+          "attempts": []
+        }
+      },
+      "changed_files": [],
+      "blockers": [],
+      "resumption_note": null,
+      "completion": null,
+      "started_at": null,
+      "updated_at": null
+    },
+    "T8.2.2": {
+      "owner": "agent-2",
+      "assignment_epoch": 1,
+      "queue_rank": 390,
+      "weight": 7,
+      "write_scopes": [
+        {
+          "kind": "file",
+          "path": "docs/testing/manual/40-services-security.md"
+        },
+        {
+          "kind": "file",
+          "path": "docs/testing/manual/50-payments-admin.md"
+        },
+        {
+          "kind": "file",
+          "path": "docs/testing/manual/60-staging.md"
+        },
+        {
+          "kind": "file",
+          "path": "packages/test-support/tests/t8-platform-runbook.integration.test.ts"
+        }
+      ],
+      "status": "pending",
+      "phase": "not_started",
+      "current_tier": null,
+      "claim": null,
+      "checkpoints": [],
+      "verification": {
+        "tier1_build": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier2_simplify": {
+          "status": "pending",
+          "attempts": [],
+          "required_reviewer": "code-simplifier:code-simplifier",
+          "evidence": null
+        },
+        "tier3_unit": {
+          "status": "pending",
+          "attempts": []
+        },
+        "tier4_integration": {
+          "status": "pending",
+          "attempts": []
+        }
+      },
+      "changed_files": [],
+      "blockers": [],
+      "resumption_note": null,
+      "completion": null,
+      "started_at": null,
+      "updated_at": null
+    }
+  },
+  "human_gate_decisions": {
+    "G8.LIVE_PAYMENT_ACTIVATION": {
+      "revision": 1,
+      "status": "pending",
+      "decided_at": null,
+      "decision_commit": null,
+      "redacted_note": null
+    }
+  },
+  "discoveries": [],
+  "postmortems": []
+}

@@ -1,38 +1,45 @@
 ## Decisions
 
-- [2026-07-11] Next.js 14 App Router chosen for SSR landing SEO + RSC in app — single Vercel deployment
+- [2026-07-11] Superseded by approved v1: the initial Next.js 14 choice was replaced by Next.js 16 on Node.js 22
 - [2026-07-11] pnpm workspaces + turbo for monorepo — shared types via packages/shared, no version drift
-- [2026-07-11] Firebase Auth + Firestore — phone auth built-in, generous free tier, real-time subs
+- [2026-07-11] Superseded by approved v1: Firebase remains the backend, but authentication uses Google plus email/password rather than phone
 - [2026-07-11] ElevenLabs Conversational AI for Jick and Jall voice agents — native interview SDK
-- [2026-07-11] Hermes as Node/TS agent harness — same language as frontend, types shared
-- [2026-07-11] Embedding provider kept internal/undisclosed per product philosophy
+- [2026-07-11] Superseded by approved v1: Hermes is developer-side evidence/backup and is not the production TypeScript orchestrator
+- [2026-07-11] Superseded by approved v1: Superlinked SIE is the named primary generation and embedding provider
 - [2026-07-11] OKLCH color tokens — perceptually uniform, better dark mode math than HSL
 - [2026-07-11] Marketing + waitlist as primary surface (T2) before app (T3+) — validate before building
 - [2026-07-11] Jick = creator-side agent (builds creator profile); Jall = brand-side agent (builds campaign brief)
 - [2026-07-11] Register: brand (marketing/waitlist primary surface, app behind auth)
 - [2026-07-11] Brand personality: Bold, playful, fast — creator economy speed, not corporate SaaS
 - [2026-07-11] Anti-references: Generic SaaS aesthetic, influencer marketplaces (AspireIQ/Grin style)
-- [2026-07-11] Full qualification waitlist: creator (platforms, follower range, rates) + brand (budget, campaign type)
+- [2026-07-11] Superseded by approved v1: waitlist requires only role, email, and consent; all qualification details are optional
 - [2026-07-11] Both sides get voice agent onboarding: Jick for creator profile, Jall for brand brief
+- [2026-07-11] Approved v1 supersedes the earlier foundation choices: Next.js 16 on Node.js 22, Google sign-in plus email/password, and no phone-auth flow
+- [2026-07-11] Superlinked SIE is the primary generation/embedding provider; Hermes is a developer-side coding partner and backup rather than production orchestration
+- [2026-07-11] Creator and brand roles require separate Firebase accounts with different emails and immutable single roles
+- [2026-07-11] Firebase Auth, Firestore, and private Storage are the only v1 backend; route handlers own APIs and provider/webhook boundaries
+- [2026-07-11] V3 coordination uses a stable global schedule plus isolated Agent 1 and Agent 2 runtime journals; readiness and aggregate progress are derived
+- [2026-07-11] The executable catalog has 41 stages balanced at Agent 1 weight 116 and Agent 2 weight 121
 
 ## Patterns
 
-- [2026-07-11] Monorepo structure: apps/web (Next.js), packages/agents (Hermes), packages/db, packages/auth, packages/voice, packages/shared
+- [2026-07-11] Monorepo structure: apps/web (Next.js), packages/agents (Jick, Jall, and Superlinked), packages/db, packages/auth, packages/voice, packages/shared
 - [2026-07-11] Zod schemas in packages/shared define all data shapes — used in agents, API routes, and frontend
 - [2026-07-11] Firebase emulator (`demo-jj` project) used for all integration tests — no live Firebase in CI
-- [2026-07-11] All UI files verified with impeccable detect.mjs as Tier 2 in every UI stage
+- [2026-07-11] Superseded by v1 execution rules: every changed file uses the mandatory code-simplifier Tier 2 gate
+- [2026-07-11] Agent 1 owns narrow non-API page/component scopes; Agent 2 owns packages, Firebase, scripts, and `apps/web/app/api` scopes
+- [2026-07-11] Claims must land in the owning runtime file on shared main before an implementation branch reserves work
 
 ## Gotchas
 
 - [2026-07-11] ElevenLabs integration tests require ELEVENLABS_API_KEY + audio device — skip in CI, manual QA only
-- [2026-07-11] Firebase phone verification requires real phone in production; emulator accepts any number
-- [2026-07-11] Hermes package name TBD — confirm npm package name before T4.2.1 (may be `hermes-agent` or sourced differently)
+- [2026-07-11] Superseded by v1: phone verification is not used; Google sign-in and email/password are the supported methods
+- [2026-07-11] Superseded: Hermes uses the official CLI installer and custom provider configuration, not an npm runtime package
 - [2026-07-11] Next.js middleware cannot use firebase-admin directly — use session cookies + server-side validation
+- [2026-07-11] `docs/superpowers/specs/jick-and-jall.md` is historical; v1 execution uses the dated design, v1 plan, v1 executable spec, and v3 state
+- [2026-07-11] Parallel implementation begins after Agent 1 lands T0.1.1; before that stage, the shared toolchain/state validator is intentionally serialized
 
 ## Open Questions
 
-- [2026-07-11] Confirm Hermes npm package name / installation method before T4.2.1
-- [2026-07-11] Embedding provider decision (OpenAI vs Voyage AI vs other) — finalize before T6.1.1
 - [2026-07-11] Slack / Ashby integrations (from Jack & Jill original) — not in scope for v1, revisit post-T7
-- [2026-07-11] Whether to support both creator and brand roles on a single Firebase Auth account
-- [2026-07-11] Rate/budget data sensitivity — decide if stored in Firestore or kept encrypted separately
+- [2026-07-11] Live Stripe activation remains a separate human decision after marketplace terms and operational readiness are approved
