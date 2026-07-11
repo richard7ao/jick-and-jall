@@ -1,6 +1,6 @@
 // @vitest-environment node
 import type { Principal } from "@jj/auth";
-import { SCHEMA_VERSION, type CreatorProfile } from "@jj/shared";
+import type { CreatorProfile } from "@jj/shared";
 import { describe, expect, it } from "vitest";
 import { handleGetProfile, handlePutProfile, type ProfileDeps } from "../../../app/api/creator/profile/route";
 

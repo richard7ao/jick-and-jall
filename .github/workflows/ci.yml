@@ -27,11 +27,14 @@ jobs:
       - name: Validate bilingual content
         run: pnpm content:validate
 
+      - name: Validate manual test guides
+        run: pnpm guides:validate
+
       - name: Lint
         run: pnpm lint
 
-      - name: Unit tests (scripts)
-        run: pnpm vitest run scripts
+      - name: Build packages and web
+        run: pnpm -r build
 
-      - name: Build (dry plan)
-        run: pnpm turbo run build --dry=json
+      - name: Unit tests (workspace)
+        run: pnpm vitest run
