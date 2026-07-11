@@ -24,5 +24,127 @@
     "tagline": "Hecho para la economía de creadores.",
     "privacy": "Privacidad",
     "terms": "Términos"
+  },
+  "marketing": {
+    "nav": {
+      "howItWorks": "Cómo funciona",
+      "creators": "Para creadores",
+      "brands": "Para marcas",
+      "faq": "Preguntas",
+      "waitlist": "Únete a la lista de espera",
+      "openMenu": "Abrir menú",
+      "closeMenu": "Cerrar menú"
+    },
+    "hero": {
+      "badge": "Acceso anticipado — incorporando creadores y marcas ahora",
+      "titleLead": "Creadores y marcas,",
+      "titleEmphasis": "conectados por voz.",
+      "note": "Sin mensajes en frío. Sin hojas de cálculo. Sin conjeturas.",
+      "scroll": "Desplázate para explorar",
+      "vizJick": "Jick · creador",
+      "vizJall": "Jall · marca",
+      "vizMatch": "Conectados"
+    },
+    "marquee": [
+      "UGC",
+      "Belleza",
+      "Fitness",
+      "Gaming",
+      "Comida",
+      "Moda",
+      "Tecnología",
+      "Viajes",
+      "Estilo de vida",
+      "Música",
+      "Bienestar",
+      "Hogar"
+    ],
+    "sides": {
+      "title": "Dos agentes. Una presentación.",
+      "subtitle": "Jick trabaja para creadores. Jall trabaja para marcas. Se encuentran en el medio, pero solo cuando ambas partes dicen que sí.",
+      "creator": {
+        "tag": "Jick · creadores",
+        "title": "Que te descubran sin los mensajes directos",
+        "body": "Jick te entrevista por voz una vez y construye un perfil vivo de tu voz, nicho, audiencia y tarifas. Luego te trae trabajo pagado que realmente encaja.",
+        "points": [
+          "Una charla de voz rápida — sin formularios ni media kit",
+          "Tus tarifas y límites, respetados desde el inicio",
+          "Solo ve propuestas a las que realmente dirías que sí"
+        ],
+        "cta": "Soy creador"
+      },
+      "brand": {
+        "tag": "Jall · marcas",
+        "title": "Convierte una idea vaga en los creadores correctos",
+        "body": "Jall convierte tu campaña en un brief estructurado con criterios de evaluación reales y te entrega una lista corta y clasificada de creadores que encajan — no un catálogo para revisar.",
+        "points": [
+          "Describe la campaña en voz alta; recibe un brief claro",
+          "Coincidencias clasificadas por encaje, audiencia y tarifa",
+          "Paga el monto del creador más un 10% fijo — eso es todo"
+        ],
+        "cta": "Soy marca"
+      }
+    },
+    "how": {
+      "title": "Cómo ocurre la conexión",
+      "subtitle": "Cuatro pasos desde el hola hasta una colaboración firmada.",
+      "steps": [
+        {
+          "no": "01",
+          "title": "Saluda, en voz alta",
+          "body": "Los creadores hablan con Jick, las marcas hablan con Jall. Una breve conversación de voz reemplaza los formularios interminables."
+        },
+        {
+          "no": "02",
+          "title": "Construimos el perfil",
+          "body": "Tus palabras se convierten en un perfil o brief estructurado — voz, nicho, audiencia, tarifas y criterios de evaluación."
+        },
+        {
+          "no": "03",
+          "title": "El motor clasifica el encaje",
+          "body": "Un proceso continuo de recuperación y clasificación puntúa a cada creador frente a cada brief y aprende del feedback."
+        },
+        {
+          "no": "04",
+          "title": "Consentimiento, luego conexión",
+          "body": "Nada ocurre a tus espaldas. Las presentaciones solo se envían cuando ambas partes lo aceptan."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Deja de adivinar. Empieza a conectar.",
+      "body": "Únete a la lista de espera y sé el primero en entrar cuando Jick & Jall abra.",
+      "creator": "Únete como creador",
+      "brand": "Únete como marca"
+    },
+    "faq": {
+      "title": "Preguntas, respondidas",
+      "items": [
+        {
+          "q": "¿Necesito una gran audiencia?",
+          "a": "No. Jick está hecho para todos, desde micro-creadores de UGC hasta macroinfluencers. El encaje supera al número de seguidores."
+        },
+        {
+          "q": "¿Cuánto cuesta a los creadores?",
+          "a": "Unirse es gratis. Las marcas pagan el monto acordado del creador más una comisión fija del 10% — los creadores conservan su tarifa."
+        },
+        {
+          "q": "¿Es solo otro catálogo de influencers?",
+          "a": "No. No hay una interfaz para revisar 10,000 influencers. Las marcas reciben una lista corta clasificada según un brief real."
+        },
+        {
+          "q": "¿Qué pasa con mi grabación de voz?",
+          "a": "Las grabaciones son privadas por defecto y se conservan 90 días. Elimínalas cuando quieras y se propaga upstream."
+        },
+        {
+          "q": "¿Ambas partes tienen que estar de acuerdo?",
+          "a": "Siempre. Las presentaciones requieren consentimiento — una coincidencia se convierte en conversación solo cuando el creador y la marca lo aceptan."
+        }
+      ]
+    },
+    "footerCta": "Únete a la lista de espera",
+    "rights": "Todos los derechos reservados.",
+    "langEn": "English",
+    "langEs": "Español"
   }
 }
