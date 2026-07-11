@@ -1,0 +1,34 @@
+{
+  "name": "jick-and-jall",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.34.4",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "state:validate": "tsx scripts/state/validate.ts",
+    "state:report": "tsx scripts/state/report.ts",
+    "state:assert-review": "tsx scripts/state/assert-review.ts",
+    "bootstrap:check": "tsx scripts/bootstrap/check-providers.mts",
+    "content:validate": "tsx scripts/content/validate.ts",
+    "content:check-assets": "tsx scripts/content/check-assets.ts",
+    "hermes:smoke": "tsx scripts/bootstrap/hermes-smoke.mts",
+    "hermes:verify-receipt": "tsx scripts/bootstrap/verify-hermes-receipt.mts",
+    "test": "vitest run",
+    "lint": "eslint .",
+    "format": "prettier --check ."
+  },
+  "devDependencies": {
+    "@eslint/js": "9.15.0",
+    "@types/node": "22.9.0",
+    "eslint": "9.15.0",
+    "globals": "15.12.0",
+    "prettier": "3.3.3",
+    "tsx": "4.19.2",
+    "typescript": "5.6.3",
+    "typescript-eslint": "8.15.0",
+    "vitest": "2.1.5"
+  }
+}
