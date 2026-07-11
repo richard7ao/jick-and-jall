@@ -45,6 +45,9 @@
 - [2026-07-11] Local Node is v26 but `.nvmrc` pins 22; `.ts`/`.mts` scripts run via `tsx`; pnpm ignores esbuild build scripts but tsx/vitest still work
 - [2026-07-11] Hermes CLI is not installed here, so T0.2.2 tier1 (`hermes version`) and tier4 live smoke are blocked; deterministic sanitizer/verifier tiers pass and hermes:smoke fails loudly
 - [2026-07-11] Removed the stray `.worktrees/agent-1-t0.1.1` worktree/branch (a duplicate T0.1.1 attempt) to keep a single main line
+- [2026-07-11] Emit-safe NodeNext packages (e.g. @jj/shared) must use `.js` extensions in relative imports; scripts/ uses `.ts` extensions because scripts/tsconfig.json sets allowImportingTsExtensions+noEmit
+- [2026-07-11] Package unit tests import from the built package name (`@jj/shared`) not `../src`, so tier3 must run after tier1 build (protocol already orders them that way)
+- [2026-07-11] BLOCKER: no Java runtime and no firebase-tools installed here, so the Firebase `demo-jj` emulator cannot start; this blocks the defining rules/integration tiers of T1.2.2, T1.3.1, and downstream emulator-dependent stages. Install a JDK + firebase-tools to proceed.
 
 ## Open Questions
 
