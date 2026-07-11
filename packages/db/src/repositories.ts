@@ -4,6 +4,7 @@ import { CampaignsRepository } from "./repositories/campaigns.js";
 import { CreatorProfilesRepository } from "./repositories/creator-profiles.js";
 import { DealsRepository } from "./repositories/deals.js";
 import { InvitationRepository } from "./repositories/invitations.js";
+import { LedgerRepository } from "./repositories/ledger.js";
 import { MatchesRepository } from "./repositories/matches.js";
 import { MessagesRepository } from "./repositories/messages.js";
 import { OffersRepository } from "./repositories/offers.js";
@@ -24,6 +25,7 @@ export interface Repositories {
   offers: OffersRepository;
   deals: DealsRepository;
   messages: MessagesRepository;
+  ledger: LedgerRepository;
 }
 
 export function createRepositories(
@@ -42,5 +44,6 @@ export function createRepositories(
     offers: new OffersRepository(store, clock),
     deals: new DealsRepository(store, clock),
     messages: new MessagesRepository(store, clock),
+    ledger: new LedgerRepository(store, clock),
   };
 }

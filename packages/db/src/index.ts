@@ -1,8 +1,12 @@
 export * from "./store.js";
 export * from "./in-memory-store.js";
+export * from "./firestore-store.js";
 export * from "./ids.js";
 export * from "./repositories.js";
 export * from "./context.js";
+export * from "./reconcile.js";
+export { LedgerRepository, LedgerEntrySchema } from "./repositories/ledger.js";
+export type { LedgerEntry } from "./repositories/ledger.js";
 
 export { WaitlistRepository } from "./repositories/waitlist.js";
 export { InvitationRepository } from "./repositories/invitations.js";

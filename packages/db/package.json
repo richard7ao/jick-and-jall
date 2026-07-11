@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@jj/shared": "workspace:*",
+    "firebase-admin": "14.1.0",
     "zod": "3.23.8"
   }
 }
