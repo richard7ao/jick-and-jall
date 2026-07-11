@@ -14,6 +14,7 @@
     "bootstrap:check": "tsx scripts/bootstrap/check-providers.mts",
     "content:validate": "tsx scripts/content/validate.ts",
     "content:check-assets": "tsx scripts/content/check-assets.ts",
+    "guides:validate": "tsx scripts/testing/validate-guides.mts",
     "hermes:smoke": "tsx scripts/bootstrap/hermes-smoke.mts",
     "hermes:verify-receipt": "tsx scripts/bootstrap/verify-hermes-receipt.mts",
     "firebase:validate": "firebase --config infra/firebase/firebase.json --project demo-jj emulators:exec --only firestore,storage \"node -e \\\"process.exit(0)\\\"\"",
