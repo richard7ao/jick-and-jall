@@ -6,9 +6,7 @@ const nextConfig: NextConfig = {
   transpilePackages: ["@jj/shared"],
   // firebase-admin is a native/server-only dependency; keep it external.
   serverExternalPackages: ["firebase-admin"],
-  experimental: {
-    typedRoutes: true,
-  },
+  typedRoutes: true,
 };
 
 export default nextConfig;
