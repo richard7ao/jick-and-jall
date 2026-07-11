@@ -4,3 +4,4 @@ export * from "./jick/retention.js";
 export * from "./jall/extract.js";
 export * from "./matching/rank.js";
 export * from "./deals.js";
+export * from "./intervention.js";
