@@ -20,5 +20,10 @@ export function creatorProfilesRepository(db: Firestore = getDb()) {
     async setPublished(uid: string, published: boolean, updatedAt: string): Promise<void> {
       await col.doc(uid).update({ published, updatedAt });
     },
+    async listRankable(): Promise<CreatorProfile[]> {
+      // Only registered, published, available creators are eligible for ranking.
+      const snap = await col.where("published", "==", true).where("available", "==", true).get();
+      return snap.docs.map((d) => d.data() as CreatorProfile);
+    },
   };
 }
