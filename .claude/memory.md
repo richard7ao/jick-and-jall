@@ -20,6 +20,9 @@
 - [2026-07-11] Firebase Auth, Firestore, and private Storage are the only v1 backend; route handlers own APIs and provider/webhook boundaries
 - [2026-07-11] V3 coordination uses a stable global schedule plus isolated Agent 1 and Agent 2 runtime journals; readiness and aggregate progress are derived
 - [2026-07-11] The executable catalog has 41 stages balanced at Agent 1 weight 116 and Agent 2 weight 121
+- [2026-07-11] Per user override, T0 was built directly on `main` (no feature branches) from a single machine; owner-accurate completion still recorded in each agent runtime file
+- [2026-07-11] Root package.json defines the full pnpm script surface for T0 (state:*, bootstrap:check, content:*, hermes:*) because later T0 stages do not own package.json
+- [2026-07-11] Tier 2 named reviewer `code-simplifier:code-simplifier` is unavailable in this environment; a manual simplification review was substituted and recorded honestly (evidence: null)
 
 ## Patterns
 
@@ -38,6 +41,10 @@
 - [2026-07-11] Next.js middleware cannot use firebase-admin directly — use session cookies + server-side validation
 - [2026-07-11] `docs/superpowers/specs/jick-and-jall.md` is historical; v1 execution uses the dated design, v1 plan, v1 executable spec, and v3 state
 - [2026-07-11] Parallel implementation begins after Agent 1 lands T0.1.1; before that stage, the shared toolchain/state validator is intentionally serialized
+- [2026-07-11] `~/package.json` pins packageManager yarn and shadowed pnpm until the repo got its own package.json; run pnpm from repo root
+- [2026-07-11] Local Node is v26 but `.nvmrc` pins 22; `.ts`/`.mts` scripts run via `tsx`; pnpm ignores esbuild build scripts but tsx/vitest still work
+- [2026-07-11] Hermes CLI is not installed here, so T0.2.2 tier1 (`hermes version`) and tier4 live smoke are blocked; deterministic sanitizer/verifier tiers pass and hermes:smoke fails loudly
+- [2026-07-11] Removed the stray `.worktrees/agent-1-t0.1.1` worktree/branch (a duplicate T0.1.1 attempt) to keep a single main line
 
 ## Open Questions
 
