@@ -43,11 +43,13 @@
 - [2026-07-11] Parallel implementation begins after Agent 1 lands T0.1.1; before that stage, the shared toolchain/state validator is intentionally serialized
 - [2026-07-11] `~/package.json` pins packageManager yarn and shadowed pnpm until the repo got its own package.json; run pnpm from repo root
 - [2026-07-11] Local Node is v26 but `.nvmrc` pins 22; `.ts`/`.mts` scripts run via `tsx`; pnpm ignores esbuild build scripts but tsx/vitest still work
-- [2026-07-11] Hermes CLI is not installed here, so T0.2.2 tier1 (`hermes version`) and tier4 live smoke are blocked; deterministic sanitizer/verifier tiers pass and hermes:smoke fails loudly
+- [2026-07-11] RESOLVED: Hermes CLI installed via official installer to ~/.local/bin/hermes (hermes-agent 0.18.2); repo-local .hermes/config.yaml (gitignored) copied from the example; T0.2.2 tier1 (`hermes version && hermes status`) and tier4 (`hermes:smoke`) now pass
+- [2026-07-11] RESOLVED: installed openjdk 26 (brew, keg-only) and firebase-tools 13.29.1 (root devDep); the demo-jj emulator starts and rules tests pass. `java` must be on PATH: `export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"` (added to ~/.zshrc). Run emulator work as `pnpm firebase:exec -- "COMMAND"` (quote the command as one arg)
 - [2026-07-11] Removed the stray `.worktrees/agent-1-t0.1.1` worktree/branch (a duplicate T0.1.1 attempt) to keep a single main line
+- [2026-07-11] Root vitest.config.ts excludes **/tests/rules/**; @jj/test-support has its own vitest.config.ts that includes them so `test:rules` runs under the firebase:exec wrapper
 - [2026-07-11] Emit-safe NodeNext packages (e.g. @jj/shared) must use `.js` extensions in relative imports; scripts/ uses `.ts` extensions because scripts/tsconfig.json sets allowImportingTsExtensions+noEmit
 - [2026-07-11] Package unit tests import from the built package name (`@jj/shared`) not `../src`, so tier3 must run after tier1 build (protocol already orders them that way)
-- [2026-07-11] BLOCKER: no Java runtime and no firebase-tools installed here, so the Firebase `demo-jj` emulator cannot start; this blocks the defining rules/integration tiers of T1.2.2, T1.3.1, and downstream emulator-dependent stages. Install a JDK + firebase-tools to proceed.
+- [2026-07-11] (was a blocker, now RESOLVED — see above) Java + firebase-tools are installed and the demo-jj emulator runs; T1.2.2 is complete. T1.3.1 remains gated only by its normal dependency on agent-1's T1.1.2 (Next.js foundation), not by tooling.
 
 ## Open Questions
 
