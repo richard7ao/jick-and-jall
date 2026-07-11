@@ -15,7 +15,10 @@
     "@jj/auth": "workspace:*",
     "@jj/db": "workspace:*",
     "@jj/email": "workspace:*",
+    "@jj/payments": "workspace:*",
     "@jj/shared": "workspace:*",
+    "lenis": "1.3.25",
+    "motion": "12.42.2",
     "next": "16.2.8",
     "react": "19.2.0",
     "react-dom": "19.2.0"
