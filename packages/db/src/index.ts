@@ -10,3 +10,5 @@ export * from "./repositories/brand-profiles.js";
 export * from "./repositories/campaigns.js";
 export * from "./repositories/matches.js";
 export * from "./repositories/threads.js";
+export * from "./repositories/offers.js";
+export * from "./repositories/deals.js";

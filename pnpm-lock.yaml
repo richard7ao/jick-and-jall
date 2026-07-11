@@ -117,6 +117,9 @@ importers:
 
   packages/db:
     dependencies:
+      '@jj/agents':
+        specifier: workspace:*
+        version: link:../agents
       '@jj/shared':
         specifier: workspace:*
         version: link:../shared

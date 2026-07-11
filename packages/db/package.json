@@ -17,6 +17,7 @@
     "test:integration": "vitest run tests/integration"
   },
   "dependencies": {
+    "@jj/agents": "workspace:*",
     "@jj/shared": "workspace:*",
     "firebase-admin": "12.7.0",
     "zod": "3.23.8"
