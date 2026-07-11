@@ -1,0 +1,24 @@
+# Example Hermes configuration — developer-side coding partner only.
+#
+# Hermes is NOT a production orchestrator for Jick & Jall. It is a local coding
+# assistant pointed at Superlinked's OpenAI-compatible endpoint. Copy this to
+# `.hermes/config.yaml` (git-ignored) and fill in real values locally.
+
+provider:
+  # Superlinked Inference Engine exposes an OpenAI-compatible API.
+  type: openai-compatible
+  base_url: ${SUPERLINKED_BASE_URL}/v1
+  api_key: ${SUPERLINKED_API_KEY}
+  model: ${SUPERLINKED_CHAT_MODEL}
+
+options:
+  # Never print raw provider bodies into receipts or logs.
+  print_body: false
+  # Bound requests so smoke checks cannot hang.
+  request_timeout_seconds: 30
+
+# Receipts are sanitized before they are committed under
+# docs/hackathon/hermes-receipts/ (see scripts/bootstrap/sanitize-hermes-receipt.mts).
+receipts:
+  redact: true
+  output_dir: docs/hackathon/hermes-receipts
