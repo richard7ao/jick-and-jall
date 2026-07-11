@@ -54,8 +54,13 @@
       },
       "required": ["tagline", "privacy", "terms"],
       "additionalProperties": false
+    },
+    "marketing": {
+      "description": "Free-form marketing landing copy; validated for en/es parity but not deep shape.",
+      "type": "object",
+      "additionalProperties": true
     }
   },
-  "required": ["meta", "nav", "hero", "waitlistForm", "footer"],
+  "required": ["meta", "nav", "hero", "waitlistForm", "footer", "marketing"],
   "additionalProperties": false
 }

@@ -16,6 +16,7 @@ type SchemaNode = {
   readonly type: string;
   readonly properties?: Record<string, SchemaNode>;
   readonly required?: readonly string[];
+  readonly additionalProperties?: boolean;
 };
 
 function readJson<T>(path: string): T {
@@ -34,8 +35,12 @@ function checkAgainstSchema(schema: SchemaNode, value: unknown, path: string): s
     for (const required of schema.required ?? []) {
       if (!(required in record)) problems.push(`${path}${required}: missing required key`);
     }
-    for (const key of Object.keys(record)) {
-      if (!allowed.has(key)) problems.push(`${path}${key}: unexpected key`);
+    // additionalProperties:true allows a free-form subtree (validated only for
+    // cross-locale parity, not shape). Otherwise unknown keys are rejected.
+    if (schema.additionalProperties !== true) {
+      for (const key of Object.keys(record)) {
+        if (!allowed.has(key)) problems.push(`${path}${key}: unexpected key`);
+      }
     }
     for (const [key, childSchema] of Object.entries(schema.properties ?? {})) {
       if (key in record) problems.push(...checkAgainstSchema(childSchema, record[key], `${path}${key}.`));
