@@ -53,7 +53,7 @@
 
 - [2026-07-11] All 41 v1 stages implemented on `main`. Verified suite: `pnpm -r build`, `pnpm vitest run` (Vitest workspace: node project + jsdom/React web project; 195 unit tests), `pnpm lint`, `pnpm state:validate`, `pnpm content:validate`, `pnpm guides:validate`. Emulator/e2e tiers run via `pnpm firebase:exec -- "…"` and Playwright respectively.
 - [2026-07-11] For speed per user directive, Tier 2 (code-simplifier) was skipped and recorded as `skipped_for_speed`; Playwright browser e2e and some live-provider integration tiers are deferred (recorded in runtime state) — rerun once browsers are cached / live creds are present.
-- [2026-07-11] API route handlers are dependency-injected and unit-tested; the exported Next `POST/GET` wrappers return 501 where live provider/session wiring is intentionally deferred.
+- [2026-07-11] API route handlers are dependency-injected and unit-tested; the Next `GET/POST/PUT` wrappers are now wired to real repositories + Firebase Admin session/principal (apps/web/lib/server-auth.ts), Stripe webhook, retention, and the Superlinked matching pipeline. No functional endpoint returns 501. `apps/web` directly depends on firebase-admin so subpath imports resolve.
 - [2026-07-11] Root vitest.workspace.ts delegates to the node config and apps/web config; web tests must run under apps/web root so React resolves. eslint ignores `^_`-prefixed unused args.
 
 ## Open Questions
