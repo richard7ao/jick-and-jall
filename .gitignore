@@ -30,3 +30,5 @@ ui-debug.log
 next-env.d.ts
 apps/web/test-results/
 apps/web/playwright-report/
+.vercel
+.env*

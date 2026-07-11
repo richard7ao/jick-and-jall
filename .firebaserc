@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "demo-jj",
+    "prod": "whim-2fdd9"
+  }
+}

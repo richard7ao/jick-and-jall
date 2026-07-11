@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { getDictionary, isLocale, locales } from "../../lib/i18n";
-import { PageShell } from "../../components/foundation/page-shell";
 
 export const metadata: Metadata = {
-  title: "Jick & Jall",
-  description: "Creators and brands, matched by voice.",
+  title: "Jick & Jall — Creators and brands, matched by voice",
+  description:
+    "Jick voice-interviews creators and Jall briefs brands, then a match engine ranks the fit. No cold outreach, no spreadsheets, no guesswork.",
 };
 
 export function generateStaticParams() {
@@ -26,9 +26,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} dir={dict.meta.dir}>
-      <body>
-        <PageShell locale={locale}>{children}</PageShell>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

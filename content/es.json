@@ -27,23 +27,28 @@
   },
   "marketing": {
     "nav": {
-      "howItWorks": "Cómo funciona",
+      "howItWorks": "Plataforma",
       "creators": "Para creadores",
       "brands": "Para marcas",
       "faq": "Preguntas",
       "waitlist": "Únete a la lista de espera",
+      "signIn": "Iniciar sesión",
+      "getStarted": "Empezar",
+      "demo": "Ver demo",
+      "demoLoading": "Preparando la demo…",
       "openMenu": "Abrir menú",
       "closeMenu": "Cerrar menú"
     },
     "hero": {
-      "badge": "Acceso anticipado — incorporando creadores y marcas ahora",
+      "badge": "Emparejamiento confiable para la economía de creadores",
       "titleLead": "Creadores y marcas,",
       "titleEmphasis": "conectados por voz.",
       "note": "Sin mensajes en frío. Sin hojas de cálculo. Sin conjeturas.",
       "scroll": "Desplázate para explorar",
       "vizJick": "Jick · creador",
       "vizJall": "Jall · marca",
-      "vizMatch": "Conectados"
+      "vizMatch": "Conectados",
+      "trustedBy": "Creado para equipos de toda la economía de creadores"
     },
     "marquee": [
       "UGC",
@@ -109,6 +114,18 @@
           "title": "Consentimiento, luego conexión",
           "body": "Nada ocurre a tus espaldas. Las presentaciones solo se envían cuando ambas partes lo aceptan."
         }
+      ]
+    },
+    "audiencesTitle": "Creado para equipos de toda la economía de creadores",
+    "audiences": ["Marcas DTC", "Agencias", "Compradores de medios", "Estudios UGC", "Managers de talento", "Fundadores"],
+    "trust": {
+      "title": "Nivel empresarial desde el inicio",
+      "subtitle": "Los controles que las marcas necesitan y las protecciones que los creadores merecen — integrados en la plataforma, no añadidos después.",
+      "pillars": [
+        { "title": "Presentaciones con consentimiento", "body": "Nunca se contacta a un creador o marca sin aceptar. Cada coincidencia es un sí mutuo." },
+        { "title": "Privado por diseño", "body": "Las grabaciones de voz se mantienen privadas y expiran a los 90 días, con borrado que se propaga aguas arriba." },
+        { "title": "Precios deterministas", "body": "Las marcas pagan el monto del creador más un 10% fijo. Cada cifra cuadra al céntimo." },
+        { "title": "Bilingüe y accesible", "body": "Totalmente equivalente en inglés y español, con WCAG 2.1 AA y soporte de movimiento reducido." }
       ]
     },
     "cta": {

@@ -1,30 +1,27 @@
 import { notFound } from "next/navigation";
 import { getDictionary, isLocale } from "../../../lib/i18n";
 import { Hero } from "../../../components/marketing/hero";
+import { Marquee } from "../../../components/marketing/marquee";
+import { Sides } from "../../../components/marketing/sides";
+import { HowItWorks } from "../../../components/marketing/how-it-works";
+import { Trust } from "../../../components/marketing/trust";
+import { Faq } from "../../../components/marketing/faq";
+import { CtaBand } from "../../../components/marketing/cta-band";
 
 export default async function MarketingHome({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const dict = getDictionary(locale);
-  const otherLocale = locale === "en" ? "es" : "en";
 
   return (
-    <div style={{ display: "grid", gap: "3rem" }}>
+    <>
       <Hero locale={locale} dict={dict} />
-      <section aria-labelledby="how" style={{ display: "grid", gap: "1rem" }}>
-        <h2 id="how" style={{ margin: 0 }}>
-          {dict.nav.howItWorks}
-        </h2>
-        <ol style={{ color: "var(--color-muted)", lineHeight: 1.8, paddingLeft: "1.2rem" }}>
-          <li>{dict.hero.creatorCta} → Jick</li>
-          <li>{dict.hero.brandCta} → Jall</li>
-        </ol>
-      </section>
-      <p>
-        <a href={`/${otherLocale}`} hrefLang={otherLocale}>
-          {otherLocale === "es" ? "Ver en español" : "View in English"}
-        </a>
-      </p>
-    </div>
+      <Marquee dict={dict} />
+      <Sides locale={locale} dict={dict} />
+      <HowItWorks dict={dict} />
+      <Trust dict={dict} />
+      <Faq dict={dict} />
+      <CtaBand locale={locale} dict={dict} />
+    </>
   );
 }

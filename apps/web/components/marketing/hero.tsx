@@ -1,30 +1,56 @@
+import type { CSSProperties } from "react";
+import Link from "next/link";
+import type { Route } from "next";
 import type { Dictionary, Locale } from "../../lib/i18n";
-import { ButtonLink } from "../ui/button";
+import { VoiceVisual } from "./voice-visual";
+
+const delay = (ms: number) => ({ "--rise-delay": `${ms}ms` }) as CSSProperties;
 
 /**
- * Warm two-sided hero. CTAs deep-link to the waitlist with a preselected role.
+ * Warm, enterprise-grade hero. CTAs deep-link to the waitlist with a
+ * preselected role; the animated visual dramatizes the two-sided voice match.
  * Copy comes entirely from the bilingual dictionary — no copied third-party text.
  */
 export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
-  const waitlist = (role: "creator" | "brand") => `/${locale}/waitlist?role=${role}`;
+  const m = dict.marketing.hero;
+  const waitlist = (role: "creator" | "brand") => `/${locale}/waitlist?role=${role}` as Route;
+
   return (
-    <section aria-labelledby="hero-title" style={{ display: "grid", gap: "1.25rem" }}>
-      <p style={{ color: "var(--color-accent)", fontWeight: 700, letterSpacing: "0.06em", margin: 0 }}>
-        Jick &amp; Jall
-      </p>
-      <h1 id="hero-title" style={{ fontSize: "clamp(2.5rem, 7vw + 1rem, 6rem)", margin: 0 }}>
-        {dict.hero.title}
-      </h1>
-      <p style={{ fontSize: "1.25rem", color: "var(--color-muted)", maxWidth: "52ch", margin: 0 }}>
-        {dict.hero.subtitle}
-      </p>
-      <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
-        <ButtonLink variant="primary" href={waitlist("creator")}>
-          {dict.hero.creatorCta}
-        </ButtonLink>
-        <ButtonLink variant="accent" href={waitlist("brand")}>
-          {dict.hero.brandCta}
-        </ButtonLink>
+    <section aria-labelledby="hero-title" className="hero">
+      <div className="aurora" aria-hidden="true" />
+      <div className="container hero-grid">
+        <div>
+          <span className="hero-badge rise" style={delay(0)}>
+            <span className="dot" aria-hidden="true" />
+            {m.badge}
+          </span>
+
+          <h1 id="hero-title" className="hero-title rise" style={delay(80)}>
+            {m.titleLead}
+            <span className="em">{m.titleEmphasis}</span>
+          </h1>
+
+          <p className="hero-sub rise" style={delay(170)}>
+            {dict.hero.subtitle}
+          </p>
+
+          <div className="hero-actions rise" style={delay(250)}>
+            <Link href={waitlist("creator")} className="btn btn-primary btn-lg">
+              {dict.hero.creatorCta}
+            </Link>
+            <Link href={waitlist("brand")} className="btn btn-accent btn-lg">
+              {dict.hero.brandCta}
+            </Link>
+          </div>
+
+          <p className="hero-note rise" style={delay(330)}>
+            {m.note}
+          </p>
+        </div>
+
+        <div className="rise" style={delay(200)}>
+          <VoiceVisual dict={dict} />
+        </div>
       </div>
     </section>
   );

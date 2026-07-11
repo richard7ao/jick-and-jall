@@ -1,0 +1,105 @@
+# Firebase App Hosting configuration for the @jj/web Next.js app.
+#
+# This backend runs the SSR Next.js 16 app. Create the backend with the app's
+# root directory set to "apps/web" (App Hosting has native Turborepo support and
+# will run the workspace build via turbo, honouring the `^build` dependency).
+#
+# ABSOLUTE RULE: never place secret values in this file. Sensitive keys are
+# referenced from Cloud Secret Manager via `secret:` and created out-of-band
+# with `firebase apphosting:secrets:set <NAME>`.
+
+# Cloud Run service sizing. Conservative defaults; tune once traffic is known.
+runConfig:
+  minInstances: 0
+  maxInstances: 10
+  concurrency: 80
+  cpu: 1
+  memoryMiB: 512
+
+env:
+  # --- Public Firebase web config (inlined into the client bundle) ----------
+  # These are NOT secret. They MUST be present at BUILD time because Next.js
+  # inlines NEXT_PUBLIC_* at build. Replace the placeholder values with the
+  # real whim-2fdd9 web app config (or set them in the Firebase console, which
+  # overrides values here).
+  - variable: NEXT_PUBLIC_FIREBASE_API_KEY
+    value: REPLACE_WITH_WHIM_2FDD9_API_KEY
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+    value: whim-2fdd9.firebaseapp.com
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
+    value: whim-2fdd9
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+    value: whim-2fdd9.firebasestorage.app
+    availability:
+      - BUILD
+      - RUNTIME
+
+  # --- Non-secret runtime configuration -------------------------------------
+  - variable: FIREBASE_PROJECT_ID
+    value: whim-2fdd9
+    availability:
+      - RUNTIME
+  - variable: SUPERLINKED_BASE_URL
+    value: REPLACE_WITH_SUPERLINKED_BASE_URL
+    availability:
+      - RUNTIME
+  - variable: SUPERLINKED_CHAT_MODEL
+    value: ""
+    availability:
+      - RUNTIME
+  - variable: SUPERLINKED_EMBEDDING_MODEL
+    value: ""
+    availability:
+      - RUNTIME
+  - variable: SUPERLINKED_MACHINE_PROFILE
+    value: ""
+    availability:
+      - RUNTIME
+  - variable: GOOGLE_OAUTH_CLIENT_ID
+    value: REPLACE_WITH_GOOGLE_OAUTH_CLIENT_ID
+    availability:
+      - RUNTIME
+
+  # --- Secrets (Cloud Secret Manager references; create before deploy) -------
+  # Create each with: firebase apphosting:secrets:set <NAME> --project whim-2fdd9
+  - variable: FIREBASE_CLIENT_EMAIL
+    secret: FIREBASE_CLIENT_EMAIL
+    availability:
+      - RUNTIME
+  - variable: FIREBASE_PRIVATE_KEY
+    secret: FIREBASE_PRIVATE_KEY
+    availability:
+      - RUNTIME
+  - variable: SUPERLINKED_API_KEY
+    secret: SUPERLINKED_API_KEY
+    availability:
+      - RUNTIME
+  - variable: ELEVENLABS_API_KEY
+    secret: ELEVENLABS_API_KEY
+    availability:
+      - RUNTIME
+  - variable: GOOGLE_OAUTH_CLIENT_SECRET
+    secret: GOOGLE_OAUTH_CLIENT_SECRET
+    availability:
+      - RUNTIME
+  - variable: STRIPE_SECRET_KEY
+    secret: STRIPE_SECRET_KEY
+    availability:
+      - RUNTIME
+  - variable: STRIPE_WEBHOOK_SECRET
+    secret: STRIPE_WEBHOOK_SECRET
+    availability:
+      - RUNTIME
+  - variable: RESEND_API_KEY
+    secret: RESEND_API_KEY
+    availability:
+      - RUNTIME

@@ -24,5 +24,100 @@
     "tagline": "Built for the creator economy.",
     "privacy": "Privacy",
     "terms": "Terms"
+  },
+  "marketing": {
+    "nav": {
+      "howItWorks": "Platform",
+      "creators": "For creators",
+      "brands": "For brands",
+      "faq": "FAQ",
+      "waitlist": "Join the waitlist",
+      "signIn": "Sign in",
+      "getStarted": "Get started",
+      "demo": "Go to demo",
+      "demoLoading": "Spinning up demo…",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu"
+    },
+    "hero": {
+      "badge": "Trusted matchmaking for the creator economy",
+      "titleLead": "Creators and brands,",
+      "titleEmphasis": "matched by voice.",
+      "note": "No cold outreach. No spreadsheets. No guesswork.",
+      "scroll": "Scroll to explore",
+      "vizJick": "Jick · creator",
+      "vizJall": "Jall · brand",
+      "vizMatch": "Matched",
+      "trustedBy": "Built for teams across the creator economy"
+    },
+    "marquee": ["UGC", "Beauty", "Fitness", "Gaming", "Food", "Fashion", "Tech", "Travel", "Lifestyle", "Music", "Wellness", "Home"],
+    "sides": {
+      "title": "Two agents. One introduction.",
+      "subtitle": "Jick works for creators. Jall works for brands. They meet in the middle — but only when both sides say yes.",
+      "creator": {
+        "tag": "Jick · creators",
+        "title": "Get discovered without the DMs",
+        "body": "Jick voice-interviews you once and builds a living profile of your voice, niche, audience and rates. Then it brings you paid work that actually fits.",
+        "points": [
+          "One quick voice chat — no forms, no media kit",
+          "Your rates and boundaries, respected up front",
+          "Only see briefs you'd actually say yes to"
+        ],
+        "cta": "I'm a creator"
+      },
+      "brand": {
+        "tag": "Jall · brands",
+        "title": "Turn a rough idea into the right creators",
+        "body": "Jall turns your campaign into a structured brief with real evaluation criteria, then hands you a ranked shortlist of creators who fit — not a catalog to scroll.",
+        "points": [
+          "Describe the campaign out loud; get a sharp brief back",
+          "Ranked matches on fit, audience and rate",
+          "Pay the creator amount plus a flat 10% — that's it"
+        ],
+        "cta": "I'm a brand"
+      }
+    },
+    "how": {
+      "title": "How the match happens",
+      "subtitle": "Four steps from hello to a signed collaboration.",
+      "steps": [
+        { "no": "01", "title": "Say hello, out loud", "body": "Creators talk to Jick, brands talk to Jall. A short voice conversation replaces the endless forms." },
+        { "no": "02", "title": "We build the profile", "body": "Your words become a structured profile or brief — voice, niche, audience, rates, and evaluation criteria." },
+        { "no": "03", "title": "The engine ranks fit", "body": "A continuous retrieval-and-ranking pipeline scores every creator against every brief and learns from feedback." },
+        { "no": "04", "title": "Consent, then connect", "body": "Nothing happens behind your back. Introductions only go out when both sides opt in." }
+      ]
+    },
+    "audiencesTitle": "Built for teams across the creator economy",
+    "audiences": ["DTC brands", "Agencies", "Media buyers", "UGC studios", "Talent managers", "Founders"],
+    "trust": {
+      "title": "Enterprise-grade by default",
+      "subtitle": "The controls brands need and the protections creators deserve — built into the platform, not bolted on.",
+      "pillars": [
+        { "title": "Consent-gated introductions", "body": "No creator or brand is ever contacted without opting in. Every match is a mutual yes." },
+        { "title": "Private by design", "body": "Voice recordings stay private and auto-expire after 90 days, with deletion that propagates upstream." },
+        { "title": "Deterministic pricing", "body": "Brands pay the creator amount plus a flat 10%. Every figure reconciles to the penny." },
+        { "title": "Bilingual & accessible", "body": "Fully equivalent in English and Spanish, built to WCAG 2.1 AA with reduced-motion support." }
+      ]
+    },
+    "cta": {
+      "title": "Stop guessing. Start matching.",
+      "body": "Join the waitlist and be first through the door when Jick & Jall opens.",
+      "creator": "Join as a creator",
+      "brand": "Join as a brand"
+    },
+    "faq": {
+      "title": "Questions, answered",
+      "items": [
+        { "q": "Do I need a big following?", "a": "No. Jick is built for everyone from micro-UGC creators to macro influencers. Fit beats follower count." },
+        { "q": "How much does it cost creators?", "a": "Nothing to join. Brands pay the agreed creator amount plus a flat 10% platform fee — creators keep their rate." },
+        { "q": "Is this just another influencer catalog?", "a": "No. There's no browse-10,000-influencers interface. Brands get a ranked shortlist matched to a real brief." },
+        { "q": "What happens to my voice recording?", "a": "Recordings are private by default and kept for 90 days. Delete anytime and it propagates upstream." },
+        { "q": "Do both sides have to agree?", "a": "Always. Introductions are consent-gated — a match only becomes a conversation when creator and brand both opt in." }
+      ]
+    },
+    "footerCta": "Join the waitlist",
+    "rights": "All rights reserved.",
+    "langEn": "English",
+    "langEs": "Español"
   }
 }
