@@ -53,7 +53,23 @@ describe("validateLoaded (fault injection)", () => {
 
   it("detects a scope collision between two held claims", () => {
     const bad = clone(loadState(repoRoot));
-    // agent-1/T0.1.1 already holds a claim over tree:scripts/state in the fixture.
+    // Force agent-1/T0.1.1 to be a held claim over tree:scripts/state, independent
+    // of how far the committed schedule has progressed (it may now be complete).
+    const t011 = bad.runtimes["agent-1"].stages["T0.1.1"]!;
+    bad.runtimes["agent-1"].stages["T0.1.1"] = {
+      ...t011,
+      status: "claimed",
+      completion: null,
+      claim: {
+        claim_id: "T0.1.1:agent-1:1",
+        assignment_epoch: 1,
+        branch: "x",
+        base_commit: "0".repeat(40),
+        claimed_at: "2026-07-11T00:00:00Z",
+        heartbeat_at: "2026-07-11T00:00:00Z",
+        lease_expires_at: "2026-07-11T04:00:00Z",
+      },
+    };
     const collidingScope = [{ kind: "tree", path: "scripts/state" }] as const;
     bad.global.stages["T0.2.1"] = { ...bad.global.stages["T0.2.1"]!, writes: [...collidingScope] };
     const stage = bad.runtimes["agent-2"].stages["T0.2.1"]!;
@@ -92,6 +108,15 @@ describe("deriveReadyFromLoaded", () => {
       status: "complete",
       claim: null,
       completion: { verified_commit: "abc123" },
+    };
+    // Reset T0.2.1 to unclaimed/incomplete so it can become ready, independent of
+    // how far the committed schedule has progressed (it may now be complete).
+    const t021 = loaded.runtimes["agent-2"].stages["T0.2.1"]!;
+    loaded.runtimes["agent-2"].stages["T0.2.1"] = {
+      ...t021,
+      status: "pending",
+      claim: null,
+      completion: null,
     };
     expect(deriveReadyFromLoaded(loaded)).toContain("T0.2.1");
   });
