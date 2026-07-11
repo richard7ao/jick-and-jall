@@ -25,3 +25,6 @@ ui-debug.log
 
 # OS / editor
 .DS_Store
+
+# Next.js
+next-env.d.ts

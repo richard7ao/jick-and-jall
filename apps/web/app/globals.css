@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Manrope:wght@400;500;600;700&display=swap");
+
+:root {
+  /* Warm off-white background architecture */
+  --color-bg: oklch(0.96 0.018 75);
+  --color-surface: oklch(0.92 0.015 75);
+  --color-border: oklch(0.84 0.012 75);
+
+  /* Amber/golden brand — Jick (creator) and Jall (brand) */
+  --color-primary: oklch(0.72 0.16 75);
+  --color-accent: oklch(0.5 0.14 50);
+
+  /* Warm-tinted ink */
+  --color-ink: oklch(0.15 0.02 75);
+  --color-muted: oklch(0.44 0.012 75);
+  --color-dim: oklch(0.62 0.008 75);
+
+  --color-on-primary: oklch(0.15 0.02 75);
+  --color-on-accent: oklch(0.97 0 0);
+
+  --font-display: "Epilogue", system-ui, sans-serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+
+  --radius: 0.75rem;
+  --space: 1rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 0.9vw + 0.78rem, 1.125rem);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
