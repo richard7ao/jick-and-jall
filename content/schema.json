@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "title": "Jick & Jall localized content contract",
+  "description": "Canonical key structure. Every locale file must contain exactly these keys with non-empty string leaves. English and Spanish must stay behaviorally equivalent.",
+  "type": "object",
+  "properties": {
+    "meta": {
+      "type": "object",
+      "properties": { "locale": { "type": "string" }, "dir": { "type": "string" } },
+      "required": ["locale", "dir"],
+      "additionalProperties": false
+    },
+    "nav": {
+      "type": "object",
+      "properties": {
+        "howItWorks": { "type": "string" },
+        "waitlist": { "type": "string" },
+        "signIn": { "type": "string" }
+      },
+      "required": ["howItWorks", "waitlist", "signIn"],
+      "additionalProperties": false
+    },
+    "hero": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "creatorCta": { "type": "string" },
+        "brandCta": { "type": "string" }
+      },
+      "required": ["title", "subtitle", "creatorCta", "brandCta"],
+      "additionalProperties": false
+    },
+    "waitlistForm": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "roleCreator": { "type": "string" },
+        "roleBrand": { "type": "string" },
+        "emailLabel": { "type": "string" },
+        "consent": { "type": "string" },
+        "submit": { "type": "string" },
+        "success": { "type": "string" }
+      },
+      "required": ["title", "roleCreator", "roleBrand", "emailLabel", "consent", "submit", "success"],
+      "additionalProperties": false
+    },
+    "footer": {
+      "type": "object",
+      "properties": {
+        "tagline": { "type": "string" },
+        "privacy": { "type": "string" },
+        "terms": { "type": "string" }
+      },
+      "required": ["tagline", "privacy", "terms"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["meta", "nav", "hero", "waitlistForm", "footer"],
+  "additionalProperties": false
+}

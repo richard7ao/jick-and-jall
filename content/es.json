@@ -1,0 +1,28 @@
+{
+  "meta": { "locale": "es", "dir": "ltr" },
+  "nav": {
+    "howItWorks": "Cómo funciona",
+    "waitlist": "Únete a la lista de espera",
+    "signIn": "Iniciar sesión"
+  },
+  "hero": {
+    "title": "Creadores y marcas, conectados por voz.",
+    "subtitle": "Jick entrevista a creadores y Jall prepara a las marcas; luego conectamos a ambos, sin mensajes en frío ni conjeturas.",
+    "creatorCta": "Soy creador",
+    "brandCta": "Soy marca"
+  },
+  "waitlistForm": {
+    "title": "Sé el primero en la fila",
+    "roleCreator": "Creador",
+    "roleBrand": "Marca",
+    "emailLabel": "Correo electrónico",
+    "consent": "Acepto que me contacten sobre el acceso anticipado.",
+    "submit": "Solicitar acceso",
+    "success": "Estás en la lista. Nos pondremos en contacto pronto."
+  },
+  "footer": {
+    "tagline": "Hecho para la economía de creadores.",
+    "privacy": "Privacidad",
+    "terms": "Términos"
+  }
+}

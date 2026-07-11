@@ -1,0 +1,101 @@
+{
+  "description": "Rights-aware manifest of reference assets. These are structural inspiration only; Jick & Jall must not reproduce Jack & Jill branding, copy, or claims.",
+  "assets": [
+    {
+      "id": "ref-landing-1",
+      "localPath": "jackandJillPics/landingPagePart1.png",
+      "sourceUrl": "https://www.jackandjill.ai/",
+      "author": "Jack & Jill (reference product)",
+      "license": "reference-only",
+      "intendedUse": "Structural inspiration for marketing hero layout; not reproduced."
+    },
+    {
+      "id": "ref-landing-2",
+      "localPath": "jackandJillPics/landingPagePart2.png",
+      "sourceUrl": "https://www.jackandjill.ai/",
+      "author": "Jack & Jill (reference product)",
+      "license": "reference-only",
+      "intendedUse": "Structural inspiration for marketing sections; not reproduced."
+    },
+    {
+      "id": "ref-landing-3",
+      "localPath": "jackandJillPics/landingPagePart3.png",
+      "sourceUrl": "https://www.jackandjill.ai/",
+      "author": "Jack & Jill (reference product)",
+      "license": "reference-only",
+      "intendedUse": "Structural inspiration for marketing sections; not reproduced."
+    },
+    {
+      "id": "ref-landing-recruiter",
+      "localPath": "jackandJillPics/landingPageJill(forRecruiters).png",
+      "sourceUrl": "https://www.jackandjill.ai/",
+      "author": "Jack & Jill (reference product)",
+      "license": "reference-only",
+      "intendedUse": "Structural inspiration for the brand-side landing; not reproduced."
+    },
+    {
+      "id": "ref-dashboard-inbox",
+      "localPath": "jackandJillPics/dashboardInbox.png",
+      "sourceUrl": "https://www.jackandjill.ai/",
+      "author": "Jack & Jill (reference product)",
+      "license": "reference-only",
+      "intendedUse": "Structural inspiration for the authenticated inbox; not reproduced."
+    },
+    {
+      "id": "ref-dashboard-jobs",
+      "localPath": "jackandJillPics/dashboardJobs.png",
+      "sourceUrl": "https://www.jackandjill.ai/",
+      "author": "Jack & Jill (reference product)",
+      "license": "reference-only",
+      "intendedUse": "Structural inspiration for the matches/opportunities list; not reproduced."
+    },
+    {
+      "id": "ref-dashboard-profile",
+      "localPath": "jackandJillPics/dashboardProfile.png",
+      "sourceUrl": "https://www.jackandjill.ai/",
+      "author": "Jack & Jill (reference product)",
+      "license": "reference-only",
+      "intendedUse": "Structural inspiration for the profile editor; not reproduced."
+    },
+    {
+      "id": "ref-pricing",
+      "localPath": "jackandJillPics/pricing.png",
+      "sourceUrl": "https://www.jackandjill.ai/",
+      "author": "Jack & Jill (reference product)",
+      "license": "reference-only",
+      "intendedUse": "Structural inspiration for pricing presentation; not reproduced."
+    },
+    {
+      "id": "ref-login",
+      "localPath": "jackandJillPics/login.png",
+      "sourceUrl": "https://www.jackandjill.ai/",
+      "author": "Jack & Jill (reference product)",
+      "license": "reference-only",
+      "intendedUse": "Structural inspiration for the sign-in screen; not reproduced."
+    },
+    {
+      "id": "ref-about-1",
+      "localPath": "jackandJillPics/abousUsPart1.png",
+      "sourceUrl": "https://www.jackandjill.ai/",
+      "author": "Jack & Jill (reference product)",
+      "license": "reference-only",
+      "intendedUse": "Structural inspiration for the about section; not reproduced."
+    },
+    {
+      "id": "ref-about-2",
+      "localPath": "jackandJillPics/aboutUsPart2.png",
+      "sourceUrl": "https://www.jackandjill.ai/",
+      "author": "Jack & Jill (reference product)",
+      "license": "reference-only",
+      "intendedUse": "Structural inspiration for the about section; not reproduced."
+    },
+    {
+      "id": "ref-flow-creator-brand",
+      "localPath": "docs/references/flows/creator-brand-v1.png",
+      "sourceUrl": "https://www.jackandjill.ai/",
+      "author": "Jick & Jall (internal flow sketch)",
+      "license": "internal",
+      "intendedUse": "Internal reference for the creator↔brand matching flow."
+    }
+  ]
+}

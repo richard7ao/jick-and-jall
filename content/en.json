@@ -1,0 +1,28 @@
+{
+  "meta": { "locale": "en", "dir": "ltr" },
+  "nav": {
+    "howItWorks": "How it works",
+    "waitlist": "Join the waitlist",
+    "signIn": "Sign in"
+  },
+  "hero": {
+    "title": "Creators and brands, matched by voice.",
+    "subtitle": "Jick interviews creators and Jall briefs brands, then we match the two — no cold outreach, no guesswork.",
+    "creatorCta": "I'm a creator",
+    "brandCta": "I'm a brand"
+  },
+  "waitlistForm": {
+    "title": "Be first in line",
+    "roleCreator": "Creator",
+    "roleBrand": "Brand",
+    "emailLabel": "Email address",
+    "consent": "I agree to be contacted about early access.",
+    "submit": "Request access",
+    "success": "You're on the list. We'll be in touch soon."
+  },
+  "footer": {
+    "tagline": "Built for the creator economy.",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  }
+}
