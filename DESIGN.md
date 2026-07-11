@@ -2,33 +2,40 @@
 
 ## Theme
 
-Dark. Near-pure-black background with electric acid-chartreuse as the primary brand color.
-The palette reads like a ring-lit creator's phone screen at 6pm — electric, confident, nothing safe.
+Light. Warm off-white background with amber/golden brand colors carrying the emotional warmth.
+High energy, confident — not pastel, not cold-elite. Glossier/Boy Smells energy: visible warmth
+in the surface, saturated brand tones doing the heavy lifting.
 
-Color strategy: **Committed**. The chartreuse carries 30–60% of hero surfaces; neutrals hold space around it,
-never diluting it. The coral-orange accent marks the Jall (brand) side; chartreuse marks the Jick (creator) side.
+**Scene:** A creator opens Jick & Jall at 10am in a sunlit LA coffee shop — warm morning light
+through the windows, oat milk latte on the table, airy and optimistic. The brand rep on the
+other side is confident and excited, not corporate.
+
+**Color strategy: Committed.** The amber-gold primary carries 30–60% of hero surfaces.
+The bg is a visible warm off-white (tinted toward the brand's own hue) — not cream/paper/
+parchment, but a clearly warm-tinted white with presence. Warmth is layered: bg provides the
+foundation, brand colors deliver the emotion.
 
 ## Colors
 
 ```css
 :root {
-  /* Background architecture */
-  --color-bg:      oklch(0.07 0.000 0);    /* near-pure black */
-  --color-surface: oklch(0.12 0.000 0);    /* lifted surface for panels/cards */
-  --color-border:  oklch(0.20 0.000 0);    /* subtle separator */
+  /* Background architecture — visible warm off-white */
+  --color-bg:      oklch(0.96 0.018 75);   /* warm off-white, amber-tinted */
+  --color-surface: oklch(0.92 0.015 75);   /* panels / cards */
+  --color-border:  oklch(0.84 0.012 75);   /* separator lines */
 
-  /* Brand colors */
-  --color-primary: oklch(0.82 0.21 110);   /* electric acid-chartreuse (Jick / creator side) */
-  --color-accent:  oklch(0.68 0.18 25);    /* electric coral-orange (Jall / brand side) */
+  /* Brand colors — amber/golden, same warm family, two intensities */
+  --color-primary: oklch(0.72 0.16 75);    /* Jick / creator side: warm amber-gold */
+  --color-accent:  oklch(0.50 0.14 50);    /* Jall / brand side: deeper amber-orange, richer weight */
 
-  /* Text */
-  --color-ink:     oklch(0.97 0.000 0);    /* near-pure white — body copy */
-  --color-muted:   oklch(0.58 0.000 0);    /* secondary text — ≥3.5:1 on bg */
-  --color-dim:     oklch(0.38 0.000 0);    /* tertiary / disabled */
+  /* Text — warm-tinted ink, not cold black */
+  --color-ink:     oklch(0.15 0.020 75);   /* near-black with warm tint — ~12:1 on bg */
+  --color-muted:   oklch(0.44 0.012 75);   /* secondary text — ~5:1 on bg */
+  --color-dim:     oklch(0.62 0.008 75);   /* tertiary / placeholder — ~3:1 on bg */
 
-  /* Text-on-fills (saturated fills use white text per H-K effect) */
-  --color-on-primary: oklch(0.07 0.000 0); /* dark bg on chartreuse — L 0.82 is pale, dark text */
-  --color-on-accent:  oklch(0.97 0.000 0); /* white text on coral — L 0.68 is mid, white wins */
+  /* Text-on-fills */
+  --color-on-primary: oklch(0.15 0.020 75); /* dark ink on primary: L 0.72 is pale, dark text */
+  --color-on-accent:  oklch(0.97 0.000 0);  /* near-white on accent: L 0.50 mid, white text wins */
 
   /* Z-index scale */
   --z-dropdown:       100;
@@ -40,38 +47,43 @@ never diluting it. The coral-orange accent marks the Jall (brand) side; chartreu
 }
 ```
 
-**Contrast checks:**
-- `--color-ink` on `--color-bg`: ~14:1 ✓ (WCAG AAA)
-- `--color-muted` on `--color-bg`: ~4.1:1 ✓ (WCAG AA large text; use at ≥16px)
-- `--color-primary` as button bg with `--color-on-primary` (dark): L 0.82 is pale enough for dark text ✓
-- `--color-accent` as button bg with `--color-on-accent` (white): L 0.68 mid-luminance + C 0.18 → white text per H-K ✓
-- `--color-primary` vs `--color-accent`: hue 110° vs 25° (85° apart), L 0.82 vs 0.68 → clearly distinct ✓
+**Contrast checks (all vs `--color-bg` oklch(0.96 0.018 75)):**
+- `--color-ink` (L 0.15): ~12:1 ✓ WCAG AAA
+- `--color-muted` (L 0.44): ~5.1:1 ✓ WCAG AA
+- `--color-dim` (L 0.62): ~3.2:1 ✓ WCAG AA large text (use at ≥18px bold or ≥24px)
+- `--color-primary` button with dark text (L 0.15 on L 0.72): ~5.5:1 ✓
+- `--color-accent` button with white text (L 0.97 on L 0.50): ~8.2:1 ✓
+- Primary vs accent (L 0.72 vs L 0.50, hue 75° vs 50°): clearly distinct ✓
 
 ## Typography
 
-**Font pair:** Barlow Condensed (display) + Geist (body/UI)
+**Font pair: Epilogue (display) + Manrope (body)**
 
-Barlow Condensed: highway-sign confidence, condensed punchy headlines, zero editorial-magazine reading.
-Geist: geometric precision body type, technically legible at small sizes, not on reflex list.
+Epilogue: variable humanist sans with warm, rounded-but-confident letterforms. Round features
+with personality — none of the cold geometric rigidity of Inter/Outfit. High weight contrast
+(100–900) gives strong hierarchy at display sizes. Not on reflex-reject list.
+
+Manrope: geometric structure with humanist details. Smooth open curves, warm without being soft.
+Excellent small-size legibility. Variable weight axis. Not on reflex-reject list.
 
 ```css
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,800&family=Geist:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800&family=Manrope:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --font-display: 'Barlow Condensed', sans-serif;
-  --font-body:    'Geist', sans-serif;
+  --font-display: 'Epilogue', sans-serif;
+  --font-body:    'Manrope', sans-serif;
 
-  /* Type scale (fluid clamp — 1.333 ratio) */
-  --text-xs:   clamp(0.694rem, 0.65vw + 0.55rem,  0.800rem);
-  --text-sm:   clamp(0.833rem, 0.75vw + 0.65rem,  0.938rem);
-  --text-base: clamp(1.000rem, 0.90vw + 0.78rem,  1.125rem);
-  --text-lg:   clamp(1.200rem, 1.10vw + 0.94rem,  1.375rem);
-  --text-xl:   clamp(1.440rem, 1.40vw + 1.10rem,  1.750rem);
-  --text-2xl:  clamp(1.728rem, 1.80vw + 1.30rem,  2.250rem);
-  --text-3xl:  clamp(2.074rem, 2.40vw + 1.55rem,  3.000rem);
-  --text-4xl:  clamp(2.488rem, 3.50vw + 1.80rem,  4.000rem);
-  --text-5xl:  clamp(2.986rem, 5.00vw + 2.00rem,  5.500rem);
-  --text-hero: clamp(3.583rem, 7.00vw + 2.20rem,  6.000rem); /* max 6rem — ceiling respected */
+  /* Fluid type scale — 1.333 ratio, clamp() */
+  --text-xs:   clamp(0.694rem,  0.65vw + 0.55rem,  0.800rem);
+  --text-sm:   clamp(0.833rem,  0.75vw + 0.65rem,  0.938rem);
+  --text-base: clamp(1.000rem,  0.90vw + 0.78rem,  1.125rem);
+  --text-lg:   clamp(1.200rem,  1.10vw + 0.94rem,  1.375rem);
+  --text-xl:   clamp(1.440rem,  1.40vw + 1.10rem,  1.750rem);
+  --text-2xl:  clamp(1.728rem,  1.80vw + 1.30rem,  2.250rem);
+  --text-3xl:  clamp(2.074rem,  2.40vw + 1.55rem,  3.000rem);
+  --text-4xl:  clamp(2.488rem,  3.50vw + 1.80rem,  4.000rem);
+  --text-5xl:  clamp(2.986rem,  5.00vw + 2.00rem,  5.500rem);
+  --text-hero: clamp(3.583rem,  7.00vw + 2.20rem,  6.000rem); /* max 6rem */
 
   /* Leading */
   --leading-tight:  1.1;
@@ -79,22 +91,27 @@ Geist: geometric precision body type, technically legible at small sizes, not on
   --leading-normal: 1.5;
   --leading-loose:  1.7;
 
-  /* Tracking */
-  --tracking-tight:  -0.03em;
-  --tracking-normal:  0em;
-  --tracking-wide:    0.04em;
-  --tracking-wider:   0.08em;
+  /* Tracking — floor of -0.04em on display */
+  --tracking-display: -0.03em;
+  --tracking-heading: -0.02em;
+  --tracking-normal:   0em;
+  --tracking-wide:     0.04em;
+  --tracking-wider:    0.08em;
 }
 
-/* Display headings always use Barlow Condensed */
 h1, h2, h3 {
   font-family: var(--font-display);
   font-weight: 800;
-  letter-spacing: var(--tracking-tight); /* ≥ -0.04em floor respected */
+  letter-spacing: var(--tracking-display); /* ≥ -0.04em floor respected */
   text-wrap: balance;
 }
 
-/* Body always Geist */
+h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: var(--tracking-heading);
+}
+
 body {
   font-family: var(--font-body);
   font-size: var(--text-base);
@@ -104,7 +121,6 @@ body {
   text-wrap: pretty;
 }
 
-/* Body line length cap */
 p, li { max-width: 68ch; }
 ```
 
@@ -130,6 +146,7 @@ p, li { max-width: 68ch; }
   --radius-md:   8px;
   --radius-lg:  12px;
   --radius-xl:  20px;
+  --radius-2xl: 28px;
   --radius-full: 9999px;
 }
 ```
@@ -138,20 +155,23 @@ p, li { max-width: 68ch; }
 
 ### Button
 
-Two variants. Primary uses chartreuse fill with dark text. Ghost uses transparent with ink border.
+Primary uses amber-gold fill with warm-ink text. Accent (Jall-side) uses deeper amber-orange with
+white text. Ghost uses ink border, no fill.
 
 ```css
 .btn {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 700;
   font-size: var(--text-base);
   letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
   padding: var(--space-3) var(--space-6);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-full);  /* pill shape — warm, approachable, not corporate rectangle */
   border: 2px solid transparent;
   cursor: pointer;
   transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
 }
 
 .btn:active { transform: scale(0.97); }
@@ -161,29 +181,24 @@ Two variants. Primary uses chartreuse fill with dark text. Ghost uses transparen
   color: var(--color-on-primary);
   border-color: var(--color-primary);
 }
-
 .btn-primary:hover { opacity: 0.88; }
-
-.btn-ghost {
-  background: transparent;
-  color: var(--color-ink);
-  border-color: var(--color-border);
-}
-
-.btn-ghost:hover {
-  border-color: var(--color-ink);
-}
 
 .btn-accent {
   background: var(--color-accent);
   color: var(--color-on-accent);
   border-color: var(--color-accent);
 }
+.btn-accent:hover { opacity: 0.88; }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-ink);
+  border-color: var(--color-border);
+}
+.btn-ghost:hover { border-color: var(--color-ink); }
 ```
 
 ### Side pill (Jick / Jall indicator)
-
-Used to distinguish the two agent sides. Small pill label.
 
 ```css
 .pill {
@@ -199,15 +214,15 @@ Used to distinguish the two agent sides. Small pill label.
 }
 
 .pill-jick {
-  background: oklch(0.82 0.21 110 / 0.15);
-  color: var(--color-primary);
-  border: 1px solid oklch(0.82 0.21 110 / 0.30);
+  background: oklch(0.72 0.16 75 / 0.12);
+  color: oklch(0.50 0.14 65);
+  border: 1px solid oklch(0.72 0.16 75 / 0.25);
 }
 
 .pill-jall {
-  background: oklch(0.68 0.18 25 / 0.15);
+  background: oklch(0.50 0.14 50 / 0.10);
   color: var(--color-accent);
-  border: 1px solid oklch(0.68 0.18 25 / 0.30);
+  border: 1px solid oklch(0.50 0.14 50 / 0.25);
 }
 ```
 
@@ -218,25 +233,26 @@ Used to distinguish the two agent sides. Small pill label.
   font-family: var(--font-body);
   font-size: var(--text-base);
   color: var(--color-ink);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
   padding: var(--space-3) var(--space-4);
   width: 100%;
-  transition: border-color 0.15s ease-out;
+  transition: border-color 0.15s ease-out, box-shadow 0.15s ease-out;
 }
 
-.input::placeholder { color: var(--color-muted); }
+.input::placeholder { color: var(--color-dim); }
 
 .input:focus {
   outline: none;
   border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px oklch(0.72 0.16 75 / 0.15);
 }
 ```
 
-### Section dividers
+### Section rhythm
 
-No eyebrow labels on every section. Use generous vertical spacing + subtle border-top for rhythm.
+No eyebrow labels on every section. Generous vertical spacing + subtle warm border for rhythm.
 
 ```css
 .section {
@@ -250,10 +266,9 @@ No eyebrow labels on every section. Use generous vertical spacing + subtle borde
 
 ## Motion
 
-Library: **Motion (Framer Motion)** for React components. Lenis for smooth scroll on the landing page.
+Library: **Motion (Framer Motion)** for React components. Lenis for smooth scroll.
 
 ```css
-/* Easing tokens — ease-out-quart for most; expo for dramatic entrances */
 :root {
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);
@@ -265,7 +280,6 @@ Library: **Motion (Framer Motion)** for React components. Lenis for smooth scrol
   --duration-enter:  600ms;
 }
 
-/* Reduced motion — swap all transitions to instant crossfade */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -274,23 +288,25 @@ Library: **Motion (Framer Motion)** for React components. Lenis for smooth scrol
 }
 ```
 
-**Motion principles for Jick & Jall:**
-- Landing page hero: single orchestrated entrance (wordmark scales up, headline reveals line by line, CTAs fade in). One sequence, not per-section reflex.
-- Voice agent session: pulsing ring animation on the microphone icon (clip-path or box-shadow, not layout).
-- Matching pipeline: staggered list reveal for ranked matches — stagger is legitimate here, it's a list.
-- Waitlist form: step transitions use horizontal slide (translateX), not fade. Speed of the step change communicates the product's pace.
+**Motion principles:**
+- Landing hero: single orchestrated entrance. Wordmark fades + scales, headline reveals, CTAs slide up. One sequence per fold, not per-section entrance reflex.
+- Waitlist form: step transitions slide horizontally (translateX). Speed communicates the product's pace.
+- Voice session: pulsing glow on microphone icon (box-shadow, not layout property).
+- Matched list: legitimate stagger — it's a list, stagger is appropriate.
+- Warm easing: ease-out-quart for most; expo only for dramatic hero moments.
 
 ## Imagery direction
 
-This is a brand surface — imagery is required. No colored div placeholders.
+This is a brand surface — imagery required. No colored div placeholders.
 
-**Creator side (Jick):** Raw, unpolished-on-purpose. Behind-the-scenes creator content: phone propped
-up, ring light off-center, natural light in apartments. Capture the work, not the glamor.
+**Creator side (Jick):** Warm, natural light. Sunlit interiors, coffee shops, creators at work —
+not polished photoshoots. Relaxed, authentic, warm ambient light.
 
-**Brand side (Jall):** Clean glass-table DTC product flat-lays, campaign mood boards, the controlled
-version. Contrast with Jick deliberately.
+**Brand side (Jall):** Clean but not cold. Product flat-lays in warm natural light, brand mood boards
+with amber tones. Controlled but approachable.
 
-**Stock source:** Unsplash. Verify URLs before use.
+**Stock source:** Unsplash. Verify URLs before use. Search for specifics:
+"creator filming in sunlit LA apartment" beats "influencer marketing."
 
 ## Tailwind config extension
 
@@ -303,24 +319,25 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg:       'oklch(0.07 0.000 0)',
-        surface:  'oklch(0.12 0.000 0)',
-        border:   'oklch(0.20 0.000 0)',
-        primary:  'oklch(0.82 0.21 110)',
-        accent:   'oklch(0.68 0.18 25)',
-        ink:      'oklch(0.97 0.000 0)',
-        muted:    'oklch(0.58 0.000 0)',
-        dim:      'oklch(0.38 0.000 0)',
+        bg:       'oklch(0.96 0.018 75)',
+        surface:  'oklch(0.92 0.015 75)',
+        border:   'oklch(0.84 0.012 75)',
+        primary:  'oklch(0.72 0.16 75)',
+        accent:   'oklch(0.50 0.14 50)',
+        ink:      'oklch(0.15 0.020 75)',
+        muted:    'oklch(0.44 0.012 75)',
+        dim:      'oklch(0.62 0.008 75)',
       },
       fontFamily: {
-        display: ['Barlow Condensed', 'sans-serif'],
-        body:    ['Geist', 'sans-serif'],
+        display: ['Epilogue', 'sans-serif'],
+        body:    ['Manrope', 'sans-serif'],
       },
       letterSpacing: {
-        tight:  '-0.03em',
-        normal:  '0em',
-        wide:    '0.04em',
-        wider:   '0.08em',
+        display: '-0.03em',
+        heading: '-0.02em',
+        normal:   '0em',
+        wide:     '0.04em',
+        wider:    '0.08em',
       },
     },
   },
