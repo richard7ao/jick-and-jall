@@ -8,3 +8,4 @@ export * from "./repositories/voice-sessions.js";
 export * from "./repositories/audit-events.js";
 export * from "./repositories/brand-profiles.js";
 export * from "./repositories/campaigns.js";
+export * from "./repositories/matches.js";
