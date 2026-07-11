@@ -101,7 +101,14 @@ importers:
 
   packages/auth: {}
 
-  packages/db: {}
+  packages/db:
+    dependencies:
+      '@jj/shared':
+        specifier: workspace:*
+        version: link:../shared
+      zod:
+        specifier: 3.23.8
+        version: 3.23.8
 
   packages/email: {}
 
