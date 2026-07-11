@@ -44,6 +44,9 @@ importers:
 
   apps/web:
     dependencies:
+      '@jj/agents':
+        specifier: workspace:*
+        version: link:../../packages/agents
       '@jj/auth':
         specifier: workspace:*
         version: link:../../packages/auth

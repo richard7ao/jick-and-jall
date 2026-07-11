@@ -11,6 +11,7 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
+    "@jj/agents": "workspace:*",
     "@jj/auth": "workspace:*",
     "@jj/db": "workspace:*",
     "@jj/email": "workspace:*",
