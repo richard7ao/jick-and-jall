@@ -68,6 +68,9 @@ importers:
       '@jj/shared':
         specifier: workspace:*
         version: link:../../packages/shared
+      '@jj/voice':
+        specifier: workspace:*
+        version: link:../../packages/voice
       firebase-admin:
         specifier: 12.7.0
         version: 12.7.0

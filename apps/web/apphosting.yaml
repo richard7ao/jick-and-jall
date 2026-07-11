@@ -103,3 +103,9 @@ env:
     secret: RESEND_API_KEY
     availability:
       - RUNTIME
+  # Bearer token that authorizes the scheduled voice-retention purge. The Cloud
+  # Scheduler job (see deployment runbook) must send `Authorization: Bearer <this>`.
+  - variable: CRON_SECRET
+    secret: CRON_SECRET
+    availability:
+      - RUNTIME
