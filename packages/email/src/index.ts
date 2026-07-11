@@ -1,1 +1,2 @@
-export const packageName = "@jj/email";
+export * from "./templates.js";
+export * from "./provider.js";

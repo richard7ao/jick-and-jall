@@ -18,6 +18,7 @@
     "hermes:verify-receipt": "tsx scripts/bootstrap/verify-hermes-receipt.mts",
     "firebase:validate": "firebase --config infra/firebase/firebase.json --project demo-jj emulators:exec --only firestore,storage \"node -e \\\"process.exit(0)\\\"\"",
     "firebase:exec": "firebase --config infra/firebase/firebase.json --project demo-jj emulators:exec --only firestore,storage,auth",
+    "test:integration:waitlist": "pnpm --filter @jj/db exec vitest run tests/integration/waitlist.integration.test.ts",
     "test": "vitest run",
     "lint": "eslint .",
     "format": "prettier --check ."

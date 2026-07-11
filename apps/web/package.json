@@ -11,6 +11,8 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
+    "@jj/db": "workspace:*",
+    "@jj/email": "workspace:*",
     "@jj/shared": "workspace:*",
     "next": "16.2.8",
     "react": "19.2.0",
