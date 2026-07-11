@@ -13,6 +13,12 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "test": "vitest run"
+    "test": "vitest run tests/converter.test.ts",
+    "test:integration": "vitest run tests/integration"
+  },
+  "dependencies": {
+    "@jj/shared": "workspace:*",
+    "firebase-admin": "12.7.0",
+    "zod": "3.23.8"
   }
 }
