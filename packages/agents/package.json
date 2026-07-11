@@ -14,5 +14,10 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "vitest run"
+  },
+  "dependencies": {
+    "@jj/shared": "workspace:*",
+    "@jj/voice": "workspace:*",
+    "zod": "3.23.8"
   }
 }

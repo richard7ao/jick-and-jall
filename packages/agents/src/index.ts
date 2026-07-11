@@ -1,1 +1,1 @@
-export const packageName = "@jj/agents";
+export * from "./superlinked/client.js";
