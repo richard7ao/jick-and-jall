@@ -13,6 +13,13 @@ dist/
 !.env.example
 .hermes/config.yaml
 
+# Firebase emulator artifacts
+*-debug.log
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+.firebase/
+
 # Coordination worktrees
 .worktrees/
 

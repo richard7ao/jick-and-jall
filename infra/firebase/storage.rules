@@ -1,0 +1,22 @@
+rules_version = '2';
+
+// Default-deny Storage rules. Private media (voice recordings) lives under a
+// per-owner prefix and is never publicly readable; access is brokered by
+// server-side signed URLs. Direct client access is limited to the owner.
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    function isOwner(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+
+    match /recordings/{uid}/{allPaths=**} {
+      allow read: if isOwner(uid);
+      allow write: if false;
+    }
+
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}
