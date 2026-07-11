@@ -1,17 +1,17 @@
-'use client'
+"use client";
 
-import { useEffect } from 'react'
+import { useEffect } from "react";
 
 export default function Error({
   error,
   reset,
 }: {
-  error: Error & { digest?: string }
-  reset: () => void
+  error: Error & { digest?: string };
+  reset: () => void;
 }) {
   useEffect(() => {
-    console.error(error)
-  }, [error])
+    console.error(error);
+  }, [error]);
 
   return (
     <main
@@ -19,9 +19,7 @@ export default function Error({
       className="mx-auto flex min-h-dvh max-w-xl flex-col items-start justify-center gap-4 px-6"
     >
       <h1 className="font-display text-3xl font-extrabold">Something went wrong</h1>
-      <p className="text-muted">
-        An unexpected error occurred. You can try again.
-      </p>
+      <p className="text-muted">An unexpected error occurred. You can try again.</p>
       <button
         type="button"
         onClick={reset}
@@ -30,5 +28,5 @@ export default function Error({
         Try again
       </button>
     </main>
-  )
+  );
 }

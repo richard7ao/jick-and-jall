@@ -7,44 +7,44 @@
  * the package boundary.
  */
 
-import { readFileSync } from 'node:fs'
-import { dirname, join } from 'node:path'
+import { readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
 
-import type { Locale } from './i18n'
+import type { Locale } from "./i18n";
 
 export interface Dictionary {
-  meta: { locale: string; dir: string }
-  nav: { howItWorks: string; waitlist: string; signIn: string }
-  hero: { title: string; subtitle: string; creatorCta: string; brandCta: string }
+  meta: { locale: string; dir: string };
+  nav: { howItWorks: string; waitlist: string; signIn: string };
+  hero: { title: string; subtitle: string; creatorCta: string; brandCta: string };
   waitlistForm: {
-    title: string
-    roleCreator: string
-    roleBrand: string
-    emailLabel: string
-    consent: string
-    submit: string
-    success: string
-  }
-  footer: { tagline: string; privacy: string; terms: string }
+    title: string;
+    roleCreator: string;
+    roleBrand: string;
+    emailLabel: string;
+    consent: string;
+    submit: string;
+    success: string;
+  };
+  footer: { tagline: string; privacy: string; terms: string };
 }
 
 function findContentDir(): string {
-  let dir = process.cwd()
+  let dir = process.cwd();
   for (let depth = 0; depth < 8; depth += 1) {
-    const candidate = join(dir, 'content')
+    const candidate = join(dir, "content");
     try {
-      readFileSync(join(candidate, 'en.json'))
-      return candidate
+      readFileSync(join(candidate, "en.json"));
+      return candidate;
     } catch {
-      const parent = dirname(dir)
-      if (parent === dir) break
-      dir = parent
+      const parent = dirname(dir);
+      if (parent === dir) break;
+      dir = parent;
     }
   }
-  throw new Error('Unable to locate the repo-root content directory')
+  throw new Error("Unable to locate the repo-root content directory");
 }
 
 export function getDictionary(locale: Locale): Dictionary {
-  const file = join(findContentDir(), `${locale}.json`)
-  return JSON.parse(readFileSync(file, 'utf8')) as Dictionary
+  const file = join(findContentDir(), `${locale}.json`);
+  return JSON.parse(readFileSync(file, "utf8")) as Dictionary;
 }
